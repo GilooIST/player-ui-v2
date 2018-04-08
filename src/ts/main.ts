@@ -95,6 +95,9 @@ if (typeof Object.assign !== 'function') {
   };
 }
 
+/*
+* If you tends to disable some components, try to comment codes in uimanager.ts
+*/
 const playerui = {
   version: '{{VERSION}}',
   // Management
@@ -156,7 +159,7 @@ const playerui = {
   VolumeSlider,
   VolumeToggleButton,
   VRToggleButton,
-  Watermark,
+  Watermark,  // feature: always keeps on site
   // Subtitle related components
   subtitlesettings: {
     BackgroundColorSelectBox,

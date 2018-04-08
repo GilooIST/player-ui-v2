@@ -4,7 +4,7 @@
 > Bitmovin-ui is [here](https://github.com/bitmovin/bitmovin-player-ui).  
 
 ### Rendering Type: 
-> style: Moderm  
+> Style: Moderm  
 > UIManager.Factory: buildDefaultUI  
 
 ### How to develop?

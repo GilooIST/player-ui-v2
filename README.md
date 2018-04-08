@@ -1,4 +1,4 @@
 # Giloo/ist
-# Developer Version
+## Developer Version
 
-# Reference to bitmovin-player-ui
+## Reference to bitmovin-player-ui

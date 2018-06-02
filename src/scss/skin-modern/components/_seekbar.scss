@@ -7,16 +7,21 @@
 
   cursor: pointer;
   font-size: 1em;
-  height: 1em;
+  height: 1.2em; // link to $bar-height
+  // height: 1em; [mod]
   position: relative;
   width: 100%;
 
   $bar-inset: auto;
-  $bar-height: .2em;
+  $bar-height: 1.2em;
+  // $bar-height: .2em; [mod]
+  $bar-border-radius: 10px; // [mod]
 
   .#{$prefix}-seekbar {
     height: 100%;
     position: relative;
+    border-radius: $bar-border-radius; // [mod]
+    overflow: hidden;  // [mod]
 
     %bar {
       // sass-lint:disable no-vendor-prefixes

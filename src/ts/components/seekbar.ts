@@ -790,15 +790,24 @@ export class SeekBar extends Component<SeekBarConfig> {
     let style = this.config.vertical ?
       // -ms-transform required for IE9
       // -webkit-transform required for Android 4.4 WebView
+      //
+      // [mod] 6/2 Louis Assume
+      // Because the seekbar would scaleX, we need to calcuate each size's border-radius
       {
         'transform': 'scaleY(' + scale + ')',
         '-ms-transform': 'scaleY(' + scale + ')',
         '-webkit-transform': 'scaleY(' + scale + ')',
+        'border-radius': Number(10/scale)+'px/10px',
+        '-ms-border-radius': Number(10/scale)+'px/10px',
+        '-webkit-border-radius': Number(10/scale)+'px/10px',
       } :
       {
         'transform': 'scaleX(' + scale + ')',
         '-ms-transform': 'scaleX(' + scale + ')',
         '-webkit-transform': 'scaleX(' + scale + ')',
+        'border-radius': Number(10/scale)+'px/10px',
+        '-ms-border-radius': Number(10/scale)+'px/10px',
+        '-webkit-border-radius': Number(10/scale)+'px/10px',
       };
     element.css(style);
   }

@@ -1,27 +1,32 @@
 @import '../variables';
 
-%ui-seekbar {
+// 18/6/2 Louis mod
+// Volume slider is also linked to this file.
+
+// I've reset _seekbar from % to mixin, in order to pass bar-height variable
+// Noted that border-radius & scaleX is controlled by seekbar.ts , not here!
+
+@mixin seekbarMix($bar-height){
   @extend %ui-component;
 
   @include hidden;
 
   cursor: pointer;
   font-size: 1em;
-  height: 1.2em; // link to $bar-height
-  // height: 1em; [mod]
+  // height: 1.2em; // link to $bar-height , for seekbar
+  // height: 1em; [mod] // for volume-slider
   position: relative;
   width: 100%;
 
   $bar-inset: auto;
-  $bar-height: 1.2em;
-  // $bar-height: .2em; [mod]
+  // $bar-height: 1.2em; // for seekbar
+  // $bar-height: .2em; [mod] // for volume slider
   $bar-border-radius: 10px; // [mod]
 
   .#{$prefix}-seekbar {
     height: 100%;
     position: relative;
     border-radius: $bar-border-radius; // [mod]
-    overflow: hidden;  // [mod]
 
     %bar {
       // sass-lint:disable no-vendor-prefixes
@@ -159,7 +164,10 @@
     }
   }
 }
-
 .#{$prefix}-ui-seekbar {
-  @extend %ui-seekbar;
+  @include seekbarMix(1.2em);
+  height: 1.2em;
+  .#{$prefix}-seekbar {
+    overflow: hidden;
+  }
 }

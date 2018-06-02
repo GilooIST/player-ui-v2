@@ -1,11 +1,14 @@
 @import '../variables';
 
 .#{$prefix}-ui-volumeslider {
-  @extend %ui-seekbar;
+  @include seekbarMix(.2em);
+  // @extend %ui-seekbar;
+  height: 1em;
 
   .#{$prefix}-seekbar {
     .#{$prefix}-seekbar-playbackposition-marker {
       background-image: svg('assets/skin-modern/images/dot-volume.svg');
+      height: 1.1em; // For purpose, Css setting error in browser
     }
 
     .#{$prefix}-seekbar-bufferlevel {

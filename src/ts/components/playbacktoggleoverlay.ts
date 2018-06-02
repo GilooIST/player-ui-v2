@@ -4,6 +4,11 @@ import { PlaybackTimeLabel, PlaybackTimeLabelMode } from './playbacktimelabel';
 
 /**
  * Overlays the player and displays error messages.
+ * 
+ * Edited By Louis 18/6/2
+ * 我計畫讓這個ts檔變成hover時，壓在畫面上的 { timeShift, play/pause, timeLabel }的container。
+ * [TODO] components
+ * [mod]
  */
 export class PlaybackToggleOverlay extends Container<ContainerConfig> {
 

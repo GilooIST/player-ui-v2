@@ -1,15 +1,14 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Adobe Illustrator 21.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 32 32" style="enable-background:new 0 0 32 32;" xml:space="preserve">
-<style type="text/css">
-	.st0{fill:#FFFFFF;}
-</style>
-<g id="Shape_2">
-	<g>
-		<path class="st0" d="M23.3,15.2L9.8,5.6c-0.3-0.2-0.7-0.3-1-0.1C8.5,5.7,8.3,6,8.3,6.3v19.3c0,0.4,0.2,0.7,0.6,0.9
-			c0.1,0.1,0.3,0.1,0.4,0.1c0.2,0,0.4-0.1,0.6-0.2l13.4-9.7c0.3-0.2,0.4-0.5,0.4-0.8C23.6,15.7,23.5,15.3,23.3,15.2z M10.3,23.6V8.4
-			L21,16L10.3,23.6z"/>
-	</g>
-</g>
+
+<svg width="80px" height="80px" viewBox="0 0 80 80" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Guideline" transform="translate(-118.000000, -1635.000000)" stroke="#FFFFFF" stroke-width="2">
+            <g id="ic_player_play" transform="translate(118.000000, 1635.000000)">
+                <path d="M44.3238793,28.9907529 L56.856421,47.5472993 C57.4746306,48.462663 57.2337395,49.7058698 56.3183758,50.3240793 C55.987772,50.5473593 55.597948,50.6666667 55.1990084,50.6666667 L30.1339249,50.6666667 C29.0293554,50.6666667 28.1339249,49.7712362 28.1339249,48.6666667 C28.1339249,48.2677271 28.2532323,47.877903 28.4765123,47.5472993 L41.009054,28.9907529 C41.6272636,28.0753892 42.8704703,27.8344982 43.7858341,28.4527077 C43.9979613,28.5959722 44.1806148,28.7786257 44.3238793,28.9907529 Z" id="Triangle" stroke-linecap="round" stroke-linejoin="round" transform="translate(42.666667, 40.000000) rotate(90.000000) translate(-42.666667, -40.000000) "></path>
+                <path d="M40,79 C61.5653623,79 79,61.5653623 79,40 C79,18.4346377 61.5653623,1 40,1 C18.4346377,1 1,18.4346377 1,40 C1,61.5653623 18.4346377,79 40,79 Z" id="Shape" fill-rule="nonzero"></path>
+            </g>
+        </g>
+    </g>
 </svg>

@@ -3,8 +3,19 @@
 
 .#{$prefix}-ui-playbacktoggle-overlay {
   @extend %ui-container;
+  @include layout-cover;
+
+  .#{$prefix}-container-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 
   .#{$prefix}-ui-hugeplaybacktogglebutton {
     @include layout-cover;
+  }
+  .#{$prefix}-ui-hugePlaybackTimeLabel {
+    position: absolute;
+    top: 58%;
   }
 }

@@ -46,7 +46,7 @@
 
     .#{$prefix}-seekbar-bufferlevel {
       @extend %bar;
-      background-color: $color-primary;
+      background-color: transparentize($color-seekbar, .8);
       margin: $bar-inset 0;
       transition: .3s linear, .3s linear;
       transition-property: transform;
@@ -54,13 +54,13 @@
 
     .#{$prefix}-seekbar-seekposition {
       @extend %bar;
-      background-color: transparentize($color-primary, .8);
+      background-color: transparentize($color-seekbar, .8);
       margin: $bar-inset 0;
     }
 
     .#{$prefix}-seekbar-playbackposition {
       @extend %bar;
-      background-color: $color-highlight;
+      background-color: $color-seekbar;
       margin: $bar-inset 0;
       transition: .1s linear, .1s linear;
       transition-property: transform;

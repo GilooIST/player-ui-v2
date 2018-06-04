@@ -1,0 +1,25 @@
+@import '../variables';
+@import '../mixins';
+
+// This is for timeShiftButton
+%timeShift {
+  width: 4em;
+  height: 4em;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.#{$prefix}-ui-timeShiftButton-moveBack {
+  @extend %ui-button;
+  @extend %timeShift;
+  left: calc(50% - 130px);
+  background-image: svg('assets/skin-modern/images/move-back.svg')
+}
+
+.#{$prefix}-ui-timeShiftButton-moveForward {
+  @extend %ui-button;
+  @extend %timeShift;
+  right: calc(50% - 130px);
+  background-image: svg('assets/skin-modern/images/move-forward.svg')
+}

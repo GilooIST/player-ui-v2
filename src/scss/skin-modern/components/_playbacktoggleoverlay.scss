@@ -16,6 +16,23 @@
   }
   .#{$prefix}-ui-hugePlaybackTimeLabel {
     position: absolute;
-    top: 58%;
+    top: calc(50% + 50px);
+    font-size: .9em;
+    letter-spacing: 1px;
+  }
+}
+
+.#{$prefix}-ui-playbacktoggle-overlay.#{$prefix}-hidden {
+  .#{$prefix}-container-wrapper {
+    .#{$prefix}-ui-hugePlaybackTimeLabel {
+      visibility: hidden;
+    }
+    .#{$prefix}-ui-timeShiftButton-moveBack {
+      visibility: hidden;
+    }
+
+    .#{$prefix}-ui-timeShiftButton-moveForward {
+      visibility: hidden;
+    }
   }
 }

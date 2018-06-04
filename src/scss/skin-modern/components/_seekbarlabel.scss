@@ -60,6 +60,7 @@
         .#{$prefix}-seekbar-label-time {
           display: block;
           line-height: .8em;
+          letter-spacing: 1px; //[mod] Louis
         }
 
         .#{$prefix}-seekbar-label-title {

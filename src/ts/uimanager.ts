@@ -447,15 +447,15 @@ export namespace UIManager.Factory {
         subtitleSettingsPanel,
         new Container({
           components: [
-            new PlaybackTimeLabel({ timeLabelMode: PlaybackTimeLabelMode.CurrentTime, hideInLivePlayback: true }),
+            // new PlaybackTimeLabel({ timeLabelMode: PlaybackTimeLabelMode.CurrentTime, hideInLivePlayback: true }),
             new SeekBar({ label: new SeekBarLabel() }),
-            new PlaybackTimeLabel({ timeLabelMode: PlaybackTimeLabelMode.TotalTime, cssClasses: ['text-right'] }),
+            // new PlaybackTimeLabel({ timeLabelMode: PlaybackTimeLabelMode.TotalTime, cssClasses: ['text-right'] }),
           ],
           cssClasses: ['controlbar-top'],
         }),
         new Container({
           components: [
-            new PlaybackToggleButton(),
+            // new PlaybackToggleButton(),
             new VolumeToggleButton(),
             new VolumeSlider(),
             new Spacer(),

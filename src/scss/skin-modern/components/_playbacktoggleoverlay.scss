@@ -1,6 +1,7 @@
 @import '../variables';
 @import '../mixins';
 
+
 .#{$prefix}-ui-playbacktoggle-overlay {
   @extend %ui-container;
   @include layout-cover;
@@ -22,17 +23,34 @@
   }
 }
 
+@mixin hidden-animated-overlay($duration: $animation-duration) {
+  // opacity: 1;
+  // transition: opacity $duration, visibility 0s;
+  // visibility: visible;
+
+  // &.#{$prefix}-hidden {
+    opacity: 0;
+    transition: opacity $duration, visibility $duration;
+    visibility: hidden;
+  // }
+}
+
+
 .#{$prefix}-ui-playbacktoggle-overlay.#{$prefix}-hidden {
   .#{$prefix}-container-wrapper {
     .#{$prefix}-ui-hugePlaybackTimeLabel {
-      visibility: hidden;
+      @include hidden-animated-overlay;
     }
     .#{$prefix}-ui-timeShiftButton-moveBack {
-      visibility: hidden;
+      @include hidden-animated-overlay;
     }
 
     .#{$prefix}-ui-timeShiftButton-moveForward {
-      visibility: hidden;
+      @include hidden-animated-overlay;
+    }
+
+    .#{$prefix}-ui-hugeplaybacktogglebutton {
+      @include hidden-animated-overlay;
     }
   }
 }

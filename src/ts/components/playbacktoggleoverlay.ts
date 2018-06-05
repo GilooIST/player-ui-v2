@@ -14,6 +14,9 @@ import { TimeShiftButton } from './timeShiftButton';
  * 目前多掛上一層 shownState
  * 會多出 bmpui-hidden 的 class ，再用css控制
  * 
+ * E.B.L 6/5
+ * 改寫顯示的邏輯
+ * 
  * [TODO] components
  * [mod]
  */
@@ -43,10 +46,14 @@ export class PlaybackToggleOverlay extends Container<ContainerConfig> {
 
   configure(player: bitmovin.PlayerAPI, uimanager: UIInstanceManager, handleClickEvent: boolean = true): void {
 
+    let shouldBeShown = false;
+
     let shownStateHandler = () => {
       if(!player.isPlaying()) this.show();
       else this.hide();
     }
+
+
 
     // Call handler upon these events
     player.addEventHandler(player.EVENT.ON_PLAY, shownStateHandler);
@@ -60,6 +67,16 @@ export class PlaybackToggleOverlay extends Container<ContainerConfig> {
     player.addEventHandler(player.EVENT.ON_SOURCE_UNLOADED, shownStateHandler);
     // when playback finishes, player turns to paused mode
     player.addEventHandler(player.EVENT.ON_PLAYBACK_FINISHED, shownStateHandler);
+  
+    uimanager.onControlsShow.subscribe(() => {
+      shouldBeShown = true;
+      this.show();
+    });
+    uimanager.onControlsHide.subscribe(() => {
+      shouldBeShown = false;
+      this.hide();
+    });
+  
   }
 
 }

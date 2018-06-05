@@ -11,7 +11,7 @@ import { TimeShiftButton } from './timeShiftButton';
  * 我計畫讓這個ts檔變成hover時，壓在畫面上的 { timeShift, play/pause, timeLabel }的container。
  * 
  * Edited By Louis 18/6/4
- * 目前多掛上一層 shownState 的控制，並在css中進行控制
+ * 目前多掛上一層 shownState
  * 會多出 bmpui-hidden 的 class ，再用css控制
  * 
  * [TODO] components

@@ -7,7 +7,8 @@
   background-image: svg('assets/skin-modern/images/fullscreen.svg');
 
   &:hover {
-    @include svg-icon-shadow;
+    // @include svg-icon-shadow;
+    background-image: svg('assets/skin-modern/images/fullscreenHover.svg');
   }
 
   &.#{$prefix}-on {

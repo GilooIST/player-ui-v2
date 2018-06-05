@@ -48,25 +48,25 @@ export class PlaybackToggleOverlay extends Container<ContainerConfig> {
 
     let shouldBeShown = false;
 
-    let shownStateHandler = () => {
-      if(!player.isPlaying()) this.show();
-      else this.hide();
-    }
+    // let shownStateHandler = () => {
+    //   if(!player.isPlaying()) this.show();
+    //   else this.hide();
+    // }
 
 
 
-    // Call handler upon these events
-    player.addEventHandler(player.EVENT.ON_PLAY, shownStateHandler);
-    player.addEventHandler(player.EVENT.ON_PAUSED, shownStateHandler);
-    if (player.EVENT.ON_PLAYING) {
-      // Since player 7.3. Not really necessary but just in case we ever miss the ON_PLAY event.
-      player.addEventHandler(player.EVENT.ON_PLAYING, shownStateHandler);
-    }
-    // after unloading + loading a new source, the player might be in a different playing state (from playing into stopped)
-    player.addEventHandler(player.EVENT.ON_SOURCE_LOADED, shownStateHandler);
-    player.addEventHandler(player.EVENT.ON_SOURCE_UNLOADED, shownStateHandler);
-    // when playback finishes, player turns to paused mode
-    player.addEventHandler(player.EVENT.ON_PLAYBACK_FINISHED, shownStateHandler);
+    // // Call handler upon these events
+    // player.addEventHandler(player.EVENT.ON_PLAY, shownStateHandler);
+    // player.addEventHandler(player.EVENT.ON_PAUSED, shownStateHandler);
+    // if (player.EVENT.ON_PLAYING) {
+    //   // Since player 7.3. Not really necessary but just in case we ever miss the ON_PLAY event.
+    //   player.addEventHandler(player.EVENT.ON_PLAYING, shownStateHandler);
+    // }
+    // // after unloading + loading a new source, the player might be in a different playing state (from playing into stopped)
+    // player.addEventHandler(player.EVENT.ON_SOURCE_LOADED, shownStateHandler);
+    // player.addEventHandler(player.EVENT.ON_SOURCE_UNLOADED, shownStateHandler);
+    // // when playback finishes, player turns to paused mode
+    // player.addEventHandler(player.EVENT.ON_PLAYBACK_FINISHED, shownStateHandler);
   
     uimanager.onControlsShow.subscribe(() => {
       shouldBeShown = true;

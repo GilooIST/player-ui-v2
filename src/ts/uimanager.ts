@@ -418,8 +418,8 @@ export namespace UIManager.Factory {
       components: [
         new SettingsPanelItem('Video Quality', new VideoQualitySelectBox()),
         new SettingsPanelItem('Speed', new PlaybackSpeedSelectBox()),
-        new SettingsPanelItem('Audio Track', new AudioTrackSelectBox()),
-        new SettingsPanelItem('Audio Quality', new AudioQualitySelectBox()),
+        // new SettingsPanelItem('Audio Track', new AudioTrackSelectBox()),
+        // new SettingsPanelItem('Audio Quality', new AudioQualitySelectBox()),
       ],
       hidden: true,
     });

@@ -38,13 +38,16 @@ export class VideoQualitySelectBox extends SelectBox {
 
       if (this.hasAuto) {
         // Add entry for automatic quality switching (default setting)
-        this.addItem('auto', 'auto');
+        this.addItem('auto', 'Auto');
       }
 
-      // Add video qualities
-      for (let videoQuality of videoQualities) {
-        this.addItem(videoQuality.id, videoQuality.label);
-      }
+      // Add video qualities [Mod] Louis
+      this.selectQuality(videoQualities);
+      
+      // for (let videoQuality of videoQualities) {
+      //   this.addItem(videoQuality.id, videoQuality.label);
+      // }
+
 
       // Select initial quality
       selectCurrentVideoQuality();
@@ -77,5 +80,35 @@ export class VideoQualitySelectBox extends SelectBox {
    */
   hasAutoItem(): boolean {
     return this.hasAuto;
+  }
+
+  /**
+   * [Mod] Louis
+   * Returns video quality of three types { High, Medium, Low },selected from all avaliable video quality
+   *   980 <= Low              -> Best: 852 , otherwise the highest
+   *   980 < Medium <= 1700    -> Best: 1280 , otherwise the highest
+   *   1700 < High             -> Best: 1920 , otherwise the highest
+   */
+  selectQuality(videoQualities:Array<bitmovin.PlayerAPI.VideoQuality>): void {
+    let selectedQualities: Array<bitmovin.PlayerAPI.VideoQuality> = [];
+    let eachHighest: Array<bitmovin.PlayerAPI.VideoQuality> = [];
+    let qualityNames: Array<string> = [ "Low","Medium","High" ];
+
+    for (let videoQuality of videoQualities) {
+      let index = videoQuality.label.indexOf("x");
+      let cut = Number(videoQuality.label.slice(0,index));
+      if(cut <= 980) {
+        if(cut == 852) selectedQualities[0] = videoQuality;
+        eachHighest[0] = videoQuality;
+      } else if(980 < cut && cut <= 1700) {
+        if(cut == 1280) selectedQualities[1] = videoQuality;
+        eachHighest[1] = videoQuality;
+      } else {
+        if(cut == 1920) selectedQualities[2] = videoQuality;
+        eachHighest[2] = videoQuality;
+      }
+    }
+    for(let i=0;i<3;i++) if(!selectedQualities[i]) selectedQualities[i] = eachHighest[i];
+    for(let i=0;i<3;i++) if(selectedQualities[i]) this.addItem(selectedQualities[i].id, qualityNames[i]);
   }
 }

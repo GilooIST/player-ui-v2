@@ -10,7 +10,9 @@ export class PlaybackSpeedSelectBox extends SelectBox {
 
   constructor(config: ListSelectorConfig = {}) {
     super(config);
-    this.defaultPlaybackSpeeds = [0.25, 0.5, 1, 1.5, 2];
+    // this.defaultPlaybackSpeeds = [0.25, 0.5, 1, 1.5, 2];
+    // [Mod] Louis :: for Sketch design
+    this.defaultPlaybackSpeeds = [0.5,1,2];
   }
 
   configure(player: bitmovin.PlayerAPI, uimanager: UIInstanceManager): void {

@@ -15,7 +15,8 @@ import {SettingsPanel, SettingsPanelItem} from './components/settingspanel';
 import {SubtitleSettingsPanel} from './components/subtitlesettings/subtitlesettingspanel';
 import {SubtitleSettingsLabel} from './components/subtitlesettings/subtitlesettingslabel';
 import {SubtitleSettingsOpenButton} from './components/subtitlesettings/subtitlesettingsopenbutton';
-import {VideoQualitySelectBox} from './components/videoqualityselectbox';
+import {VideoQualitySelectionList} from './components/videoqualityselectionlist';
+import {VideoQualitySelectContainer} from './components/videoqualityselectcontainer';
 import {Watermark} from './components/watermark';
 import {AudioQualitySelectBox} from './components/audioqualityselectbox';
 import {AudioTrackSelectBox} from './components/audiotrackselectbox';
@@ -416,7 +417,8 @@ export namespace UIManager.Factory {
 
     let settingsPanel = new SettingsPanel({
       components: [
-        new SettingsPanelItem('Video Quality', new VideoQualitySelectBox()),
+        new SettingsPanelItem('Video Quality',new VideoQualitySelectContainer()),
+        // new SettingsPanelItem('Video Quality', new VideoQualitySelectionList()),
         new SettingsPanelItem('Speed', new PlaybackSpeedSelectBox()),
         // new SettingsPanelItem('Audio Track', new AudioTrackSelectBox()),
         // new SettingsPanelItem('Audio Quality', new AudioQualitySelectBox()),
@@ -524,7 +526,7 @@ export namespace UIManager.Factory {
 
     let settingsPanel = new SettingsPanel({
       components: [
-        new SettingsPanelItem('Video Quality', new VideoQualitySelectBox()),
+        new SettingsPanelItem('Video Quality', new VideoQualitySelectionList()),
         new SettingsPanelItem('Speed', new PlaybackSpeedSelectBox()),
         new SettingsPanelItem('Audio Track', new AudioTrackSelectBox()),
         new SettingsPanelItem('Audio Quality', new AudioQualitySelectBox()),
@@ -689,7 +691,7 @@ export namespace UIManager.Factory {
   function legacyUI() {
     let settingsPanel = new SettingsPanel({
       components: [
-        new SettingsPanelItem('Video Quality', new VideoQualitySelectBox()),
+        new SettingsPanelItem('Video Quality', new VideoQualitySelectionList()),
         new SettingsPanelItem('Audio Track', new AudioTrackSelectBox()),
         new SettingsPanelItem('Audio Quality', new AudioQualitySelectBox()),
         new SettingsPanelItem('Subtitles', new SubtitleSelectBox()),
@@ -768,7 +770,7 @@ export namespace UIManager.Factory {
   function legacyTestUI() {
     let settingsPanel = new SettingsPanel({
       components: [
-        new SettingsPanelItem('Video Quality', new VideoQualitySelectBox()),
+        new SettingsPanelItem('Video Quality', new VideoQualitySelectionList()),
         new SettingsPanelItem('Audio Track', new AudioTrackSelectBox()),
         new SettingsPanelItem('Audio Quality', new AudioQualitySelectBox()),
         new SettingsPanelItem('Subtitles', new SubtitleSelectBox()),

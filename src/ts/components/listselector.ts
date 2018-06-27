@@ -116,6 +116,22 @@ export abstract class ListSelector<Config extends ListSelectorConfig> extends Co
   }
 
   /**
+   * Returns the key of the selected item.
+   * @returns {string} the key of the selected item or null if no item is selected
+   * 
+   *  [TODO] Louis 18/6/27
+   *  不直接將 item.key 對應到的回傳，主要用意是有可能回傳上一個state的畫質
+   *  安全上我選擇使用傳入 value，double-check 真正的label
+   *  Maybe it can be better
+   */
+  getSelectedItemLabel(value:string): string | null {
+    for(let item of this.items) {
+      if(item.key == value) return item.label;
+    }
+    return null;
+  }
+
+  /**
    * Removes all items from this selector.
    */
   clearItems() {

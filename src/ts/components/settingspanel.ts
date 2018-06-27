@@ -3,7 +3,7 @@ import {ComponentConfig, Component} from './component';
 import {SelectBox} from './selectbox';
 import {Label} from './label';
 import {UIInstanceManager} from '../uimanager';
-import {VideoQualitySelectBox} from './videoqualityselectbox';
+import {VideoQualitySelectionList} from './videoqualityselectionlist';
 import {AudioQualitySelectBox} from './audioqualityselectbox';
 import {Timeout} from '../timeout';
 import {Event, EventDispatcher, NoArgs} from '../eventdispatcher';
@@ -176,7 +176,7 @@ export class SettingsPanelItem extends Container<ContainerConfig> {
         let minItemsToDisplay = 2;
         // Audio/video quality select boxes contain an additional 'auto' mode, which in combination with a single
         // available quality also does not make sense
-        if ((this.setting instanceof VideoQualitySelectBox && this.setting.hasAutoItem())
+        if ((this.setting instanceof VideoQualitySelectionList && this.setting.hasAutoItem())
           || this.setting instanceof AudioQualitySelectBox) {
           minItemsToDisplay = 3;
         }

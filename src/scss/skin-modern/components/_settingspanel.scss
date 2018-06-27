@@ -69,6 +69,13 @@
     &.#{$prefix}-hidden {
       display: none;
     }
+
+    .#{$prefix}-container-wrapper {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      
+    }
   }
 }
 

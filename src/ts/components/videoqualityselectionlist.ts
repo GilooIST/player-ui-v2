@@ -1,13 +1,15 @@
-import {SelectBox} from './selectbox';
+// import {SelectBox} from './selectbox';
+import {ItemSelectionList} from './itemselectionlist';
 import {ListSelectorConfig} from './listselector';
 import {UIInstanceManager} from '../uimanager';
 
 /**
  * A select box providing a selection between 'auto' and the available video qualities.
  */
-export class VideoQualitySelectBox extends SelectBox {
+export class VideoQualitySelectionList extends ItemSelectionList {
 
   private hasAuto: boolean;
+  protected currentMode: string;
 
   constructor(config: ListSelectorConfig = {}) {
     super(config);
@@ -53,8 +55,14 @@ export class VideoQualitySelectBox extends SelectBox {
       selectCurrentVideoQuality();
     };
 
-    this.onItemSelected.subscribe((sender: VideoQualitySelectBox, value: string) => {
+    this.onItemSelected.subscribe((sender: VideoQualitySelectionList, value: string) => {
+      let videoQualities = player.getAvailableVideoQualities();
+      this.currentMode = this.getSelectedItemLabel(value);
       player.setVideoQuality(value);
+
+      // Force Update, we need setting panel to renew!
+      player.fireEvent(player.EVENT.ON_VIDEO_QUALITY_CHANGED,{});
+      // console.log(this.currentMode);
     });
 
     // Update qualities when source goes away
@@ -80,6 +88,14 @@ export class VideoQualitySelectBox extends SelectBox {
    */
   hasAutoItem(): boolean {
     return this.hasAuto;
+  }
+
+  /**
+   * Return current video quality mode.
+   * @return {string}
+   */
+  getCurrentMode():string {
+    return this.currentMode; 
   }
 
   /**

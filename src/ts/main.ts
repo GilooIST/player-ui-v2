@@ -12,7 +12,8 @@ import {ItemSelectionList} from './components/itemselectionlist';
 import {SettingsPanel, SettingsPanelItem} from './components/settingspanel';
 import {SettingsToggleButton} from './components/settingstogglebutton';
 import {ToggleButton} from './components/togglebutton';
-import {VideoQualitySelectBox} from './components/videoqualityselectbox';
+import {VideoQualitySelectionList} from './components/videoqualityselectionlist';
+import {VideoQualitySelectContainer} from './components/videoqualityselectcontainer';
 import {VolumeToggleButton} from './components/volumetogglebutton';
 import {VRToggleButton} from './components/vrtogglebutton';
 import {Watermark} from './components/watermark';
@@ -154,7 +155,8 @@ const playerui = {
   TitleBar,
   ToggleButton,
   UIContainer,
-  VideoQualitySelectBox,
+  VideoQualitySelectionList,
+  VideoQualitySelectContainer,
   VolumeControlButton,
   VolumeSlider,
   VolumeToggleButton,

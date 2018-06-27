@@ -39,9 +39,12 @@
   @import 'components/spacer';
   @import 'components/subtitlesettings/subtitlesettings';
   @import 'components/timeShiftButton'; // added by Louis [mod] 6/5
+  @import 'components/itemselectionlist'; // added by Louis [mod] 6/23
+  @import 'components/videoqualityselectcontainer';
   @import 'skin-ads';
   @import 'skin-cast-receiver';
   @import 'skin-smallscreen';
+  
 
   color: $color-primary;
   font-family: $font-family;

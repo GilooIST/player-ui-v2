@@ -57,6 +57,10 @@
     }
   }
 
+  .#{$prefix}-ui-settings-panel-item:first-child {
+    height: 5em;
+  }
+
   .#{$prefix}-ui-settings-panel-item {
     border-bottom: 1px solid transparentize($color-secondary, .7);
     margin: 0 1em;

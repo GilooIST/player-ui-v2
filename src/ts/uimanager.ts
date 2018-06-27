@@ -53,6 +53,7 @@ import {Spacer} from './components/spacer';
 import {UIUtils} from './uiutils';
 import {ArrayUtils} from './arrayutils';
 import {BrowserUtils} from './browserutils';
+import {IosToggleButtonContainer} from './components/iostogglebuttoncontainer';
 
 export interface UIRecommendationConfig {
   title: string;
@@ -419,6 +420,7 @@ export namespace UIManager.Factory {
 
     let settingsPanel = new SettingsPanel({
       components: [
+        new SettingsPanelItem('Glossary 提醒',new IosToggleButtonContainer({})),
         new SettingsPanelItem('畫質',new VideoQualitySelectContainer()),
         // new SettingsPanelItem('Video Quality', new VideoQualitySelectionList()),
         new SettingsPanelItem('速度', new PlaybackSpeedSelectContainer()),

@@ -74,6 +74,10 @@ import {StorageUtils} from './storageutils';
 import {ArrayUtils as Dummy} from './utils'; // tslint:disable-line
 import {SubtitleSettingsResetButton} from './components/subtitlesettings/subtitlesettingsresetbutton';
 
+import {IosToggleButton} from './components/iostogglebutton';
+import {IosToggleButtonContainer} from './components/iostogglebuttoncontainer';
+import {IosToggleButtonLabel} from './components/iostogglebuttonlabel';
+
 // Object.assign polyfill for ES5/IE9
 // https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/Object/assign
 if (typeof Object.assign !== 'function') {
@@ -185,6 +189,9 @@ const playerui = {
     WindowOpacitySelectBox,
     SubtitleSettingsResetButton,
   },
+  IosToggleButton,
+  IosToggleButtonContainer,
+  IosToggleButtonLabel
 };
 
 // Export UI as UMD module

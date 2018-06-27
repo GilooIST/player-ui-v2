@@ -36,7 +36,9 @@ import {ClickOverlay} from './components/clickoverlay';
 import {AdSkipButton} from './components/adskipbutton';
 import {AdMessageLabel} from './components/admessagelabel';
 import {AdClickOverlay} from './components/adclickoverlay';
-import {PlaybackSpeedSelectBox} from './components/playbackspeedselectbox';
+// import {PlaybackSpeedSelectBox} from './components/playbackspeedselectbox'; Saved for reference , not working right now! (move to playbackspeedselectionlist)
+import {PlaybackSpeedSelectionList} from './components/playbackspeedselectionlist';
+import {PlaybackSpeedSelectContainer} from './components/playbackspeedselectcontainer';
 import {HugeReplayButton} from './components/hugereplaybutton';
 import {BufferingOverlay} from './components/bufferingoverlay';
 import {CastUIContainer} from './components/castuicontainer';
@@ -136,7 +138,9 @@ const playerui = {
   MetadataLabel,
   MetadataLabelContent,
   PictureInPictureToggleButton,
-  PlaybackSpeedSelectBox,
+  //PlaybackSpeedSelectBox,
+  PlaybackSpeedSelectionList,
+  PlaybackSpeedSelectContainer,
   PlaybackTimeLabel,
   PlaybackTimeLabelMode,
   PlaybackToggleButton,

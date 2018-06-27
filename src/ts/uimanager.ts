@@ -37,7 +37,9 @@ import {AdClickOverlay} from './components/adclickoverlay';
 import EVENT = bitmovin.PlayerAPI.EVENT;
 import PlayerEventCallback = bitmovin.PlayerAPI.PlayerEventCallback;
 import AdStartedEvent = bitmovin.PlayerAPI.AdStartedEvent;
-import {PlaybackSpeedSelectBox} from './components/playbackspeedselectbox';
+//import {PlaybackSpeedSelectBox} from './components/playbackspeedselectbox';
+import {PlaybackSpeedSelectionList} from './components/playbackspeedselectionlist';
+import {PlaybackSpeedSelectContainer} from './components/playbackspeedselectcontainer';
 import {BufferingOverlay} from './components/bufferingoverlay';
 import {CastUIContainer} from './components/castuicontainer';
 import {PlaybackToggleOverlay} from './components/playbacktoggleoverlay';
@@ -417,9 +419,9 @@ export namespace UIManager.Factory {
 
     let settingsPanel = new SettingsPanel({
       components: [
-        new SettingsPanelItem('Video Quality',new VideoQualitySelectContainer()),
+        new SettingsPanelItem('畫質',new VideoQualitySelectContainer()),
         // new SettingsPanelItem('Video Quality', new VideoQualitySelectionList()),
-        new SettingsPanelItem('Speed', new PlaybackSpeedSelectBox()),
+        new SettingsPanelItem('速度', new PlaybackSpeedSelectContainer()),
         // new SettingsPanelItem('Audio Track', new AudioTrackSelectBox()),
         // new SettingsPanelItem('Audio Quality', new AudioQualitySelectBox()),
       ],
@@ -527,7 +529,7 @@ export namespace UIManager.Factory {
     let settingsPanel = new SettingsPanel({
       components: [
         new SettingsPanelItem('Video Quality', new VideoQualitySelectionList()),
-        new SettingsPanelItem('Speed', new PlaybackSpeedSelectBox()),
+        new SettingsPanelItem('Speed', new PlaybackSpeedSelectContainer()),
         new SettingsPanelItem('Audio Track', new AudioTrackSelectBox()),
         new SettingsPanelItem('Audio Quality', new AudioQualitySelectBox()),
       ],

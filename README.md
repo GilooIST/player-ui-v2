@@ -32,6 +32,11 @@
   8. Highlight wave: bitmovin
   9. ...others: bitmovin
 
+### Warning:
+I've now use 7.8 (Beta-2) to develop
+For reason that I need to catch Event (ON_PLAYBACK_SPEED_CHANGE),which only appears in 7.8+.
+Unfortunately, 7.8+ only have beta version!
+
 
 ### Faced:
 > Communicating between Bitmovin-ui and Vue

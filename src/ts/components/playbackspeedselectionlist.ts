@@ -1,16 +1,10 @@
-/**
- * Not in use anymore, replaced by PlaybackSpeedSelectionContainer & PlaybackSpeedSelectionList
- */
-
-import {SelectBox} from './selectbox';
+import {ItemSelectionList} from './itemselectionlist';
 import {ListSelectorConfig} from './listselector';
 import {UIInstanceManager} from '../uimanager';
 
-/**
- * A select box providing a selection of different playback speeds.
- */
-export class PlaybackSpeedSelectBox extends SelectBox {
+export class PlaybackSpeedSelectionList extends ItemSelectionList {
   protected defaultPlaybackSpeeds: number[];
+  protected currentMode: string;
 
   constructor(config: ListSelectorConfig = {}) {
     super(config);
@@ -24,9 +18,14 @@ export class PlaybackSpeedSelectBox extends SelectBox {
 
     this.addDefaultItems();
 
-    this.onItemSelected.subscribe((sender: PlaybackSpeedSelectBox, value: string) => {
+    this.onItemSelected.subscribe((sender: PlaybackSpeedSelectionList, value: string) => {
       player.setPlaybackSpeed(parseFloat(value));
       this.selectItem(value);
+      
+      this.currentMode = this.getSelectedItemLabel(value);
+      console.log(this.currentMode);
+      // Force Update, we need setting panel to renew!
+      player.fireEvent(player.EVENT.ON_PLAYBACK_SPEED_CHANGED,{});
     });
 
     const setDefaultValue = (): void => {
@@ -63,6 +62,15 @@ export class PlaybackSpeedSelectBox extends SelectBox {
       }
     });
   }
+
+  /**
+   * Return current video quality mode.
+   * @return {string}
+   */
+  getCurrentMode():string {
+    return this.currentMode; 
+  }
+
 
   clearItems(): void {
     this.items = [];

@@ -1,10 +1,11 @@
 @import '../variables';
 @import '../mixins';
 
-.#{$prefix}-ui-settingstogglebutton {
+.#{$prefix}-ui-settings-toggle-button {
   @extend %ui-button;
 
   background-image: svg('assets/skin-modern/images/settings.svg');
+  margin-right: 15px !important;
 
   &:hover {
     @include svg-icon-shadow;
@@ -12,5 +13,20 @@
 
   &.#{$prefix}-on {
     background-image: svg('assets/skin-modern/images/settingsX.svg');
+  }
+}
+
+.#{$prefix}-ui-subtitle-settings-toggle-button {
+  @extend %ui-button;
+
+  background-image: svg('assets/skin-modern/images/subtitleSetting.svg');
+  margin-right: 15px !important;
+
+  &:hover {
+    @include svg-icon-shadow;
+  }
+
+  &.#{$prefix}-on {
+    background-image: svg('assets/skin-modern/images/subtitleSettingX.svg');
   }
 }

@@ -1,0 +1,16 @@
+<svg viewBox="0 0 38 28" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="player-1440--04-subtitle" transform="translate(-1181.000000, -727.000000)">
+            <g id="ic_player_subtitle" transform="translate(1180.000000, 721.000000)">
+                <g id="subtitle" transform="translate(1.333333, 6.666667)">
+                    <path d="M6.22222222,15.5555556 L21.1555556,15.5555556 L21.1555556,17.7777778 L6.22222222,17.7777778 L6.22222222,15.5555556 Z M16.1777778,18.8888889 L31.1111111,18.8888889 L31.1111111,21.1111111 L16.1777778,21.1111111 L16.1777778,18.8888889 Z M23.6444444,15.5555556 L31.1111111,15.5555556 L31.1111111,17.7777778 L23.6444444,17.7777778 L23.6444444,15.5555556 Z M6.22222222,18.8888889 L13.6888889,18.8888889 L13.6888889,21.1111111 L6.22222222,21.1111111 L6.22222222,18.8888889 Z" fill="#EA2B40"></path>
+                    <rect id="outline" stroke="#EA2B40" stroke-width="2" x="1" y="1" width="35.3333333" height="24.6666667" rx="4"></rect>
+                </g>
+                <circle id="bg" cx="20" cy="20" r="20"></circle>
+            </g>
+        </g>
+    </g>
+</svg>

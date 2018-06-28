@@ -4,6 +4,9 @@
 .#{$prefix}-ui-closebutton {
   @extend %ui-button;
 
+  width: 20px;
+  height: 20px;
+
   @keyframes pulsate {
     20% {
       transform: scale(1.1);

@@ -23,7 +23,9 @@
   border-radius: 5px;
 
   width: 18em;
+  height: 12em;
 
+  overflow: hidden;
   // bottom arrow from http://www.cssarrowplease.com/
   // &::after {
   //   border: solid transparent;
@@ -76,9 +78,6 @@
       .#{$prefix}-ui-closebutton {
         position: absolute;
         right: 0;
-
-        width: 20px;
-        height: 20px;
       }
     }
   }
@@ -99,7 +98,7 @@
 
       .#{$prefix}-IosToggleButtonContainer {
         position: absolute;
-        right: 30px;
+        right: 25px;
       }
     }
   }

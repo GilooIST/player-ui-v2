@@ -96,6 +96,10 @@
 
       text-align: right;
       padding-right: 30px;
+      font-weight: 500 !important;
+
+      cursor: pointer;
+
       &::after {
         content: '';
         background-image: svg('assets/skin-modern/images/arrow.svg');
@@ -110,7 +114,30 @@
         top: 0px;
       }
     }
-    .#{$prefix}-ui-itemselectionlist.#{$prefix}-hidden {
+    .#{$prefix}-selectionListContainer {
+      .#{$prefix}-container-wrapper {
+        .#{$prefix}-ui-closebutton {
+          position: absolute;
+          z-index: 15;
+          top: 10px;
+        }
+        .#{$prefix}-ui-itemselectionlist {
+          width: 12em;
+          height: 14em;
+          li {
+            padding-left: 30px;
+            height: 35px;
+            a {
+              font-weight: 100;
+            }
+          }
+          li:first-child {
+            margin-top: 40px;
+          }
+        }
+      }
+    }
+    .#{$prefix}-selectionListContainer.#{$prefix}-hidden {
       @include hidden-animated;
     }
   }

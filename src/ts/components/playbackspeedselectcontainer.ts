@@ -3,6 +3,7 @@ import {PlaybackSpeedSelectionList} from './playbackspeedselectionlist';
 import {UIInstanceManager} from '../uimanager';
 import {Timeout} from '../timeout';
 import {Label,LabelConfig} from './label';
+import {CloseButton} from './closebutton';
 
 /**
  * Configuration interface for a {@link PlaybackSpeedSelectionContainerConfig}.
@@ -11,23 +12,34 @@ export interface PlaybackSpeedSelectionContainerConfig extends ContainerConfig {
   
 }
 
-export class PlaybackSpeedSelectContainer extends Container<PlaybackSpeedSelectionContainerConfig> {
+export class PlaybackSpeedSelectContainer<Config> extends Container<PlaybackSpeedSelectionContainerConfig> {
 
   private static readonly CLASS_SELECTED = 'selected';
   private selectionList: PlaybackSpeedSelectionList;
   private currentModeLabel: Label<LabelConfig>;
+  private closeButton: CloseButton;
+  private selectionListContainer: Container<Config>;
 
   constructor(config: PlaybackSpeedSelectionContainerConfig = {}) {
     super(config);
 
+    this.selectionListContainer = new Container({
+      cssClass: 'selectionListContainer'
+    })
+
+    this.closeButton = new CloseButton({target:this.selectionListContainer});
     this.selectionList = new PlaybackSpeedSelectionList;
     this.currentModeLabel = new Label({text: this.selectionList.getCurrentMode(),cssClasses: ["playbackspeed-currentMode"]});
+
+    this.selectionListContainer.addComponents(
+      [this.closeButton,this.selectionList]
+    );
 
     this.config = this.mergeConfig(config, {
       cssClass: 'ui-playbackspeedselectcontainer',
       components: [
         this.currentModeLabel,
-        this.selectionList
+        this.selectionListContainer
       ]
 
     }, <PlaybackSpeedSelectionContainerConfig>this.config);
@@ -37,11 +49,11 @@ export class PlaybackSpeedSelectContainer extends Container<PlaybackSpeedSelecti
     super.configure(player, uimanager);
 
     this.currentModeLabel.onClick.subscribe(()=>{
-      this.selectionList.show();
+      this.selectionListContainer.show();
     })
 
     let resetPanelDisplay = () => {
-      this.selectionList.hide();
+      this.selectionListContainer.hide();
     }
 
     // Update qualities when source goes away
@@ -55,7 +67,7 @@ export class PlaybackSpeedSelectContainer extends Container<PlaybackSpeedSelecti
     let playbackSpeedChanged = () => {
       console.log("in~");
       this.currentModeLabel.setText(this.selectionList.getCurrentMode());
-      this.selectionList.hide();
+      this.selectionListContainer.hide();
     }
 
     // Update quality selection when quality is changed (from outside)

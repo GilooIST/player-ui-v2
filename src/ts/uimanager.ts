@@ -53,7 +53,7 @@ import {Spacer} from './components/spacer';
 import {UIUtils} from './uiutils';
 import {ArrayUtils} from './arrayutils';
 import {BrowserUtils} from './browserutils';
-import {IosToggleButtonContainer} from './components/iostogglebuttoncontainer';
+import {IosToggleButtonContainer} from './components/iosToggleButton/iostogglebuttoncontainer';
 
 export interface UIRecommendationConfig {
   title: string;
@@ -419,16 +419,21 @@ export namespace UIManager.Factory {
     let subtitleOverlay = new SubtitleOverlay();
 
     let settingsPanel = new SettingsPanel({
-      components: [
-        new SettingsPanelItem('Glossary 提醒',new IosToggleButtonContainer({})),
-        new SettingsPanelItem('畫質',new VideoQualitySelectContainer()),
-        // new SettingsPanelItem('Video Quality', new VideoQualitySelectionList()),
-        new SettingsPanelItem('速度', new PlaybackSpeedSelectContainer()),
-        // new SettingsPanelItem('Audio Track', new AudioTrackSelectBox()),
-        // new SettingsPanelItem('Audio Quality', new AudioQualitySelectBox()),
-      ],
       hidden: true,
     });
+
+    let itemsToAdd = [
+      new SettingsPanelItem('設定',new CloseButton({target:settingsPanel})),
+      // new SettingsPanelItem('設定',new CloseButton({target:settingsPanel})),
+      new SettingsPanelItem('Glossary 提醒',new IosToggleButtonContainer({})),
+      new SettingsPanelItem('畫質',new VideoQualitySelectContainer()),
+      // new SettingsPanelItem('Video Quality', new VideoQualitySelectionList()),
+      new SettingsPanelItem('速度', new PlaybackSpeedSelectContainer()),
+      // new SettingsPanelItem('Audio Track', new AudioTrackSelectBox()),
+      // new SettingsPanelItem('Audio Quality', new AudioQualitySelectBox()),
+    ];
+
+    settingsPanel.addComponents(itemsToAdd);
 
     let subtitleSettingsPanel = new SubtitleSettingsPanel({
       hidden: true,

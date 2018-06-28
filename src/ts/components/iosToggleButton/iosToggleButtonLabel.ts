@@ -1,7 +1,7 @@
-import {UIInstanceManager} from '../uimanager';
-import {Component, ComponentConfig} from './component';
-import {EventDispatcher, NoArgs, Event} from '../eventdispatcher';
-import {DOM} from '../dom';
+import {UIInstanceManager} from '../../uimanager';
+import {Component, ComponentConfig} from '../component';
+import {EventDispatcher, NoArgs, Event} from '../../eventdispatcher';
+import {DOM} from '../../dom';
 
 // The Main Component is IosToggleButtonContainer!!!
 export class IosToggleButtonLabel<Config> extends Component<ComponentConfig> {

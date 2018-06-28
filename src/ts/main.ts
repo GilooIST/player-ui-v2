@@ -74,9 +74,9 @@ import {StorageUtils} from './storageutils';
 import {ArrayUtils as Dummy} from './utils'; // tslint:disable-line
 import {SubtitleSettingsResetButton} from './components/subtitlesettings/subtitlesettingsresetbutton';
 
-import {IosToggleButton} from './components/iostogglebutton';
-import {IosToggleButtonContainer} from './components/iostogglebuttoncontainer';
-import {IosToggleButtonLabel} from './components/iostogglebuttonlabel';
+import {IosToggleButton} from './components/iosToggleButton/iostogglebutton';
+import {IosToggleButtonContainer} from './components/iosToggleButton/iostogglebuttoncontainer';
+import {IosToggleButtonLabel} from './components/iosToggleButton/iostogglebuttonlabel';
 
 // Object.assign polyfill for ES5/IE9
 // https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/Object/assign

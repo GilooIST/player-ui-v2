@@ -62,6 +62,17 @@ export class Container<Config extends ContainerConfig> extends Component<Contain
   }
 
   /**
+   * Adds child components to the container.
+   * @param component[] the components to add
+   */
+  addComponents(components: Component<ComponentConfig>[]) {
+    for(let component of components) {
+      this.config.components.push(component);
+      this.componentsToAdd.push(component);
+    }
+  }
+
+  /**
    * Removes a child component from the container.
    * @param component the component to remove
    * @returns {boolean} true if the component has been removed, false if it is not contained in this container

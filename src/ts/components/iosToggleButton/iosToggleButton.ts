@@ -1,7 +1,7 @@
-import {UIInstanceManager} from '../uimanager';
-import {Component, ComponentConfig} from './component';
-import {EventDispatcher, NoArgs, Event} from '../eventdispatcher';
-import {DOM} from '../dom';
+import {UIInstanceManager} from '../../uimanager';
+import {Component, ComponentConfig} from '../component';
+import {EventDispatcher, NoArgs, Event} from '../../eventdispatcher';
+import {DOM} from '../../dom';
 
 /**
  * Configuration interface for a {@link IosToggleButton} component.

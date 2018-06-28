@@ -1,6 +1,6 @@
-import {ContainerConfig, Container} from './container';
-import {UIInstanceManager} from '../uimanager';
-import {Component, ComponentConfig} from './component';
+import {ContainerConfig, Container} from '../container';
+import {UIInstanceManager} from '../../uimanager';
+import {Component, ComponentConfig} from '../component';
 import {IosToggleButton} from './iostogglebutton';
 import {IosToggleButtonLabel} from './iostogglebuttonlabel';
 

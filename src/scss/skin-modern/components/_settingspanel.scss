@@ -1,6 +1,11 @@
 @import '../variables';
 @import '../mixins';
 
+%ui-settingPanel-label {
+  font-weight: 100;
+  padding-left: 10px;
+}
+
 .#{$prefix}-ui-settings-panel {
   @extend %ui-container;
 
@@ -16,6 +21,8 @@
   z-index: 10;
   right: 2em;
   border-radius: 5px;
+
+  width: 18em;
 
   // bottom arrow from http://www.cssarrowplease.com/
   // &::after {
@@ -58,11 +65,72 @@
   }
 
   .#{$prefix}-ui-settings-panel-item:first-child {
-    height: 5em;
+    height: 3em;
+    position: relative;
+
+    .#{$prefix}-container-wrapper {
+      position: relative;
+      .#{$prefix}-ui-label {
+        font-size: 1.1em;
+      }
+      .#{$prefix}-ui-closebutton {
+        position: absolute;
+        right: 0;
+
+        width: 20px;
+        height: 20px;
+      }
+    }
+  }
+
+  .#{$prefix}-ui-settings-panel-item:nth-child(2) {
+    height: 3em;
+    padding: 0px 0 15px 0;
+    .#{$prefix}-container-wrapper {
+      height: 100%;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      position: relative;
+
+      .#{$prefix}-ui-label {
+        @extend %ui-settingPanel-label;
+      }
+
+      .#{$prefix}-IosToggleButtonContainer {
+        position: absolute;
+        right: 30px;
+      }
+    }
+  }
+
+  .#{$prefix}-ui-settings-panel-item:nth-child(3) {
+    height: 2.5em;
+    border-top: 1px solid transparentize($color-secondary, .7);
+
+    display: flex;
+    align-items: center;
+    .#{$prefix}-container-wrapper {
+      .#{$prefix}-ui-label {
+        @extend %ui-settingPanel-label;
+      }
+    }
+  }
+
+  .#{$prefix}-ui-settings-panel-item:nth-child(4) {
+    height: 2.5em;
+
+    display: flex;
+    align-items: center;
+    .#{$prefix}-container-wrapper {
+      .#{$prefix}-ui-label {
+        @extend %ui-settingPanel-label;
+      }
+    }
   }
 
   .#{$prefix}-ui-settings-panel-item {
-    border-bottom: 1px solid transparentize($color-secondary, .7);
+    // border-bottom: 1px solid transparentize($color-secondary, .7);
     margin: 0 1em;
     padding: .5em 0;
 

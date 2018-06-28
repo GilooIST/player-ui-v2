@@ -83,3 +83,35 @@
 @mixin svg-icon-shadow {
   filter: drop-shadow(0 0 1px $color-primary);
 }
+
+
+%settingSubPanel {
+  @extend %ui-component;
+
+  .#{$prefix}-container-wrapper {
+    .#{$prefix}-ui-label {
+      // Todo
+
+      position: relative;
+
+      text-align: right;
+      padding-right: 30px;
+      &::after {
+        content: '';
+        background-image: svg('assets/skin-modern/images/arrow.svg');
+        color: white;
+        display: block;
+        height: 16px;
+        width: 8px;
+
+        position: absolute;
+        right:-10px;
+
+        top: 0px;
+      }
+    }
+    .#{$prefix}-ui-itemselectionlist.#{$prefix}-hidden {
+      @include hidden-animated;
+    }
+  }
+}

@@ -22,11 +22,11 @@
     }
   }
 
-  background-image: svg('assets/skin-modern/images/close.svg');
+  background-image: svg('assets/skin-modern/images/closeButton.svg');
 
   &:hover {
     @include svg-icon-shadow;
 
-    animation: pulsate 1s;
+    // animation: pulsate 1s;
   }
 }

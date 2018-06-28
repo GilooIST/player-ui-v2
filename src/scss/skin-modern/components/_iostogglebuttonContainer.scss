@@ -8,7 +8,8 @@
 // Reference: https://www.cssscript.com/ios-style-toggle-button-pure-css/
 
 .#{$prefix}-ui-IosToggleButtonLabel {
-  height: 2em;
+  height: 1.5em;
+  margin-bottom: 0;
 }
 
 .#{$prefix}-ui-iosToggleButton:not(:checked), .#{$prefix}-ui-iosToggleButton:checked {

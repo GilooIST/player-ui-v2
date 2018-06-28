@@ -1,0 +1,16 @@
+
+<svg viewBox="0 0 30 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="player-1440--03-setting" transform="translate(-1340.000000, -467.000000)">
+            <g id="menu_setting" transform="translate(990.000000, 447.000000)">
+                <g id="ic_player_close" transform="translate(350.000000, 20.000000)">
+                    <circle id="Oval-6" stroke="#FFFFFF" stroke-width="2" fill="#FFFFFF" cx="15" cy="15" r="14"></circle>
+                    <path d="M15.6452461,15.3509492 L20.1501946,19.9388025 L20.4375,20.2313951 L19.8670969,20.8208973 L19.5797915,20.5283046 L15.0906861,15.9565861 L10.7497878,20.6972966 L10.4726131,21 L9.88249939,20.4312845 L10.159674,20.1285811 L14.515857,15.3711783 L10.0373054,10.8102078 L9.75,10.5176151 L10.3204031,9.92811303 L10.6077085,10.2207057 L15.0704169,14.7655414 L19.3857935,10.0527034 L19.6629681,9.75 L20.2530818,10.3187155 L19.9759072,10.6214189 L15.6452461,15.3509492 Z" id="close" stroke="#000000" fill="#000000" stroke-linecap="square"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

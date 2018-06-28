@@ -435,27 +435,27 @@ export namespace UIManager.Factory {
 
     settingsPanel.addComponents(itemsToAdd);
 
-    let subtitleSettingsPanel = new SubtitleSettingsPanel({
-      hidden: true,
-      overlay: subtitleOverlay,
-      settingsPanel: settingsPanel,
-    });
+    // let subtitleSettingsPanel = new SubtitleSettingsPanel({
+    //   hidden: true,
+    //   overlay: subtitleOverlay,
+    //   settingsPanel: settingsPanel,
+    // });
 
-    let subtitleSettingsOpenButton = new SubtitleSettingsOpenButton({
-      subtitleSettingsPanel: subtitleSettingsPanel,
-      settingsPanel: settingsPanel,
-    });
+    // let subtitleSettingsOpenButton = new SubtitleSettingsOpenButton({
+    //   subtitleSettingsPanel: subtitleSettingsPanel,
+    //   settingsPanel: settingsPanel,
+    // });
 
-    settingsPanel.addComponent(
-      new SettingsPanelItem(
-        new SubtitleSettingsLabel({text: 'Subtitles', opener: subtitleSettingsOpenButton}),
-        new SubtitleSelectBox()
-    ));
+    // settingsPanel.addComponent(
+    //   new SettingsPanelItem(
+    //     new SubtitleSettingsLabel({text: 'Subtitles', opener: subtitleSettingsOpenButton}),
+    //     new SubtitleSelectBox()
+    // ));
 
     let controlBar = new ControlBar({
       components: [
         settingsPanel,
-        subtitleSettingsPanel,
+        // subtitleSettingsPanel,
         new Container({
           components: [
             // new PlaybackTimeLabel({ timeLabelMode: PlaybackTimeLabelMode.CurrentTime, hideInLivePlayback: true }),

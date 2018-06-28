@@ -22,7 +22,7 @@ import {AudioQualitySelectBox} from './components/audioqualityselectbox';
 import {AudioTrackSelectBox} from './components/audiotrackselectbox';
 import {SeekBarLabel} from './components/seekbarlabel';
 import {VolumeSlider} from './components/volumeslider';
-import {SubtitleSelectBox} from './components/subtitleselectbox';
+import {SubtitleSelectionList} from './components/subtitleselectionlist';
 import {SubtitleOverlay} from './components/subtitleoverlay';
 import {VolumeControlButton} from './components/volumecontrolbutton';
 import {CastToggleButton} from './components/casttogglebutton';
@@ -420,11 +420,11 @@ export namespace UIManager.Factory {
 
     let settingsPanel = new SettingsPanel({
       hidden: true,
+      cssClass: 'ui-settings-panel'
     });
 
     let itemsToAdd = [
       new SettingsPanelItem('設定',new CloseButton({target:settingsPanel})),
-      // new SettingsPanelItem('設定',new CloseButton({target:settingsPanel})),
       new SettingsPanelItem('Glossary 提醒',new IosToggleButtonContainer({})),
       new SettingsPanelItem('畫質',new VideoQualitySelectContainer()),
       // new SettingsPanelItem('Video Quality', new VideoQualitySelectionList()),
@@ -434,6 +434,16 @@ export namespace UIManager.Factory {
     ];
 
     settingsPanel.addComponents(itemsToAdd);
+
+    let subtitleSettingsPanel = new SettingsPanel({
+      hidden: true,
+      cssClass: 'ui-subtitle-settings-panel'
+    })
+
+    subtitleSettingsPanel.addComponents([
+      new SettingsPanelItem('字幕',new CloseButton({target:subtitleSettingsPanel})),
+      new SubtitleSelectionList()
+    ]);
 
     // let subtitleSettingsPanel = new SubtitleSettingsPanel({
     //   hidden: true,
@@ -449,12 +459,13 @@ export namespace UIManager.Factory {
     // settingsPanel.addComponent(
     //   new SettingsPanelItem(
     //     new SubtitleSettingsLabel({text: 'Subtitles', opener: subtitleSettingsOpenButton}),
-    //     new SubtitleSelectBox()
+    //     new SubtitleSelectionList()
     // ));
 
     let controlBar = new ControlBar({
       components: [
         settingsPanel,
+        subtitleSettingsPanel,
         // subtitleSettingsPanel,
         new Container({
           components: [
@@ -474,6 +485,7 @@ export namespace UIManager.Factory {
             // new AirPlayToggleButton(),
             // new CastToggleButton(),
             // new VRToggleButton(),
+            new SettingsToggleButton({ settingsPanel: subtitleSettingsPanel}),
             new SettingsToggleButton({ settingsPanel: settingsPanel }),
             new FullscreenToggleButton(),
           ],
@@ -559,7 +571,7 @@ export namespace UIManager.Factory {
     settingsPanel.addComponent(
       new SettingsPanelItem(
         new SubtitleSettingsLabel({text: 'Subtitles', opener: subtitleSettingsOpenButton}),
-        new SubtitleSelectBox()
+        new SubtitleSelectionList()
     ));
 
     settingsPanel.addComponent(new CloseButton({ target: settingsPanel }));
@@ -703,7 +715,7 @@ export namespace UIManager.Factory {
         new SettingsPanelItem('Video Quality', new VideoQualitySelectionList()),
         new SettingsPanelItem('Audio Track', new AudioTrackSelectBox()),
         new SettingsPanelItem('Audio Quality', new AudioQualitySelectBox()),
-        new SettingsPanelItem('Subtitles', new SubtitleSelectBox()),
+        new SettingsPanelItem('Subtitles', new SubtitleSelectionList()),
       ],
       hidden: true,
     });
@@ -782,7 +794,7 @@ export namespace UIManager.Factory {
         new SettingsPanelItem('Video Quality', new VideoQualitySelectionList()),
         new SettingsPanelItem('Audio Track', new AudioTrackSelectBox()),
         new SettingsPanelItem('Audio Quality', new AudioQualitySelectBox()),
-        new SettingsPanelItem('Subtitles', new SubtitleSelectBox()),
+        new SettingsPanelItem('Subtitles', new SubtitleSelectionList()),
       ],
       hidden: true,
     });

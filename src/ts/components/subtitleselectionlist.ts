@@ -1,11 +1,12 @@
 import {SelectBox} from './selectbox';
 import {ListSelectorConfig} from './listselector';
 import {UIInstanceManager} from '../uimanager';
+import {ItemSelectionList} from './itemselectionlist';
 
 /**
  * A select box providing a selection between available subtitle and caption tracks.
  */
-export class SubtitleSelectBox extends SelectBox {
+export class SubtitleSelectionList extends ItemSelectionList {
 
   constructor(config: ListSelectorConfig = {}) {
     super(config);
@@ -16,7 +17,7 @@ export class SubtitleSelectBox extends SelectBox {
 
     let selectCurrentSubtitle = () => {
       let currentSubtitle = player.getSubtitle();
-
+      
       if (currentSubtitle) {
         this.selectItem(currentSubtitle.id);
       }
@@ -26,14 +27,15 @@ export class SubtitleSelectBox extends SelectBox {
       this.clearItems();
 
       for (let subtitle of player.getAvailableSubtitles()) {
-        this.addItem(subtitle.id, subtitle.label);
+        let label = this.translateCH(subtitle.label)
+        this.addItem(subtitle.id, label);
       }
 
       // Select the correct subtitle after the subtitles have been added
       selectCurrentSubtitle();
     };
 
-    this.onItemSelected.subscribe((sender: SubtitleSelectBox, value: string) => {
+    this.onItemSelected.subscribe((sender: SubtitleSelectionList, value: string) => {
       player.setSubtitle(value === 'null' ? null : value);
     });
 
@@ -51,4 +53,22 @@ export class SubtitleSelectBox extends SelectBox {
     // Populate subtitles at startup
     updateSubtitles();
   }
+
+  /**
+   * Translation to Chinese 翻譯到中文
+   */
+  translateCH(value:string):string {
+    let translate = [
+      {key: 'off',value: '無'},
+      {key: 'en',value: '英文'},
+      {key: 'zh_tw',value: '中文'},
+      {key: 'de',value: '德文'},
+      {key: 'es',value: '西班牙文'},
+      {key: 'fr',value: '法文'},
+    ]
+
+    for(let item of translate) if(item.key == value) return item.value;
+    return value;
+  }
+
 }

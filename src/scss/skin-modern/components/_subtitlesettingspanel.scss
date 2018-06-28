@@ -1,0 +1,67 @@
+@import '../variables';
+@import '../mixins';
+
+.#{$prefix}-ui-subtitle-settings-panel {
+  $background-color: transparentize($color-background, .15);
+
+  background-color: $background-color;
+  bottom: 3em;
+  overflow: scroll;
+  padding: 0;
+  position: absolute;
+  z-index: 10;
+  right: 2em;
+  border-radius: 5px;
+
+  width: 12em;
+  height: 12em;
+
+  .#{$prefix}-container-wrapper {
+    .#{$prefix}-ui-settings-panel-item {
+      padding: 10px 10px 10px 14px;
+      height: 2.5em;
+      .#{$prefix}-container-wrapper {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        height: 100%;
+        position: relative;
+        .#{$prefix}-ui-closebutton {
+          position: absolute;
+          top: 50%;
+          right: 0px;
+          transform: translateY(-50%);
+          z-index: 15;
+        }
+      }
+    }
+    .#{$prefix}-ui-itemselectionlist {
+      height: 100%;
+      height: 100%;
+      background-color: transparent;
+      li {
+        padding-left: 30px;
+        height: 35px;
+        position: relative;
+        a {
+          font-weight: 100;
+        }
+        &.#{$prefix}-selected::after {
+          content: '';
+          display: block;
+          background-image: svg('assets/skin-modern/images/check.svg');
+          height: 16px;
+          width: 18px;
+          position: absolute;
+          left: 100px;
+        }
+      }
+      li:first-child {
+        margin-top: 40px;
+      }
+    }
+  }
+  &.#{$prefix}-hidden {
+    @include hidden-animated;
+  }
+}

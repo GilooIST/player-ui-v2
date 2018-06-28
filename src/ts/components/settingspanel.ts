@@ -37,7 +37,7 @@ export class SettingsPanel extends Container<SettingsPanelConfig> {
     super(config);
 
     this.config = this.mergeConfig<SettingsPanelConfig>(config, {
-      cssClass: 'ui-settings-panel',
+      cssClass: (this.config.cssClass?this.config.cssClass:'ui-settings-panel'),
       hideDelay: 3000,
     }, this.config);
   }

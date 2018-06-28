@@ -29,7 +29,7 @@ import {ErrorMessageOverlay} from './components/errormessageoverlay';
 import {RecommendationOverlay} from './components/recommendationoverlay';
 import {SeekBarLabel} from './components/seekbarlabel';
 import {SubtitleOverlay} from './components/subtitleoverlay';
-import {SubtitleSelectBox} from './components/subtitleselectbox';
+import {SubtitleSelectionList} from './components/subtitleselectionlist';
 import {TitleBar} from './components/titlebar';
 import {VolumeControlButton} from './components/volumecontrolbutton';
 import {ClickOverlay} from './components/clickoverlay';
@@ -159,7 +159,7 @@ const playerui = {
   SettingsToggleButton,
   Spacer,
   SubtitleOverlay,
-  SubtitleSelectBox,
+  SubtitleSelectionList,
   TitleBar,
   ToggleButton,
   UIContainer,

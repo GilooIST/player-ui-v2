@@ -776,7 +776,7 @@ export class SeekBar extends Component<SeekBarConfig> {
    * @param element the element to set the position for
    * @param percent a number between 0 and 100
    */
-  private setPosition(element: DOM, percent: number) {
+  protected setPosition(element: DOM, percent: number) {
     let scale = percent / 100;
 
     // When the scale is exactly 1 or very near 1 (and the browser internally rounds it to 1), browsers seem to render
@@ -789,7 +789,7 @@ export class SeekBar extends Component<SeekBarConfig> {
       scale = 0.99999;
     }
     if(element == this.seekBarPlaybackPosition) {
-      
+      console.log(this.seekBarPlaybackPosition)
       //      mark width + left offset
       scale += 16/this.seekBar.width() + 0.007;
 

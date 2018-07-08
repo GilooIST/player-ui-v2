@@ -1,5 +1,6 @@
 import {SeekBar, SeekBarConfig} from './seekbar';
 import {UIInstanceManager} from '../uimanager';
+import {DOM} from '../dom';
 
 /**
  * Configuration interface for the {@link VolumeSlider} component.
@@ -93,4 +94,49 @@ export class VolumeSlider extends SeekBar {
     dummyVideoElement.volume = 0.7;
     return dummyVideoElement.volume !== 1;
   }
+
+  /**
+   * Set the actual position (width or height) of a DOM element that represent a bar in the seek bar.
+   * Override function!!
+   * @param element the element to set the position for
+   * @param percent a number between 0 and 100
+   */
+  protected setPosition(element: DOM, percent: number) {
+    let scale = percent / 100;
+
+    // When the scale is exactly 1 or very near 1 (and the browser internally rounds it to 1), browsers seem to render
+    // the elements differently and the height gets slightly off, leading to mismatching heights when e.g. the buffer
+    // level bar has a width of 1 and the playback position bar has a width < 1. A jittering buffer level around 1
+    // leads to an even worse flickering effect.
+    // Various changes in CSS styling and DOM hierarchy did not solve the issue so the workaround is to avoid a scale
+    // of exactly 1.
+    if (scale >= 0.99999 && scale <= 1.00001) {
+      scale = 0.99999;
+    }
+
+    let style = this.config.vertical ?
+      // -ms-transform required for IE9
+      // -webkit-transform required for Android 4.4 WebView
+      //
+      // [mod] 6/2 Louis Assume
+      // Because the seekbar would scaleX, we need to calcuate each size's border-radius
+      {
+        'transform': 'scaleY(' + scale + ')',
+        '-ms-transform': 'scaleY(' + scale + ')',
+        '-webkit-transform': 'scaleY(' + scale + ')',
+        'border-radius': Number(10/scale)+'px/10px',
+        '-ms-border-radius': Number(10/scale)+'px/10px',
+        '-webkit-border-radius': Number(10/scale)+'px/10px',
+      } :
+      {
+        'transform': 'scaleX(' + scale + ')',
+        '-ms-transform': 'scaleX(' + scale + ')',
+        '-webkit-transform': 'scaleX(' + scale + ')',
+        'border-radius': Number(10/scale)+'px/10px',
+        '-ms-border-radius': Number(10/scale)+'px/10px',
+        '-webkit-border-radius': Number(10/scale)+'px/10px',
+      };
+    element.css(style);
+  }
+
 }

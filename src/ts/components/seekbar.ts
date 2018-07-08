@@ -59,13 +59,13 @@ export class SeekBar extends Component<SeekBarConfig> {
    */
   private static readonly CLASS_SEEKING = 'seeking';
 
-  private seekBar: DOM;
-  private seekBarPlaybackPosition: DOM;
-  private seekBarPlaybackPositionMarker: DOM;
-  private seekBarBufferPosition: DOM;
-  private seekBarSeekPosition: DOM;
-  private seekBarBackdrop: DOM;
-  private seekBarMarkersContainer: DOM;
+  protected seekBar: DOM;
+  protected seekBarPlaybackPosition: DOM;
+  protected seekBarPlaybackPositionMarker: DOM;
+  protected seekBarBufferPosition: DOM;
+  protected seekBarSeekPosition: DOM;
+  protected seekBarBackdrop: DOM;
+  protected seekBarMarkersContainer: DOM;
 
   private label: SeekBarLabel;
 
@@ -124,7 +124,7 @@ export class SeekBar extends Component<SeekBarConfig> {
 
     // Apply scaling transform to the backdrop bar to have all bars rendered similarly
     // (the call must be up here to be executed for the volume slider as well)
-    this.setPosition(this.seekBarBackdrop, 100);
+    // this.setPosition(this.seekBarBackdrop, 100);
 
     if (!configureSeek) {
       // The configureSeek flag can be used by subclasses to disable configuration as seek bar. E.g. the volume
@@ -719,6 +719,18 @@ export class SeekBar extends Component<SeekBarConfig> {
    * @param percent a number between 0 and 100 as returned by the player
    */
   setPlaybackPosition(percent: number) {
+
+
+    // Force Update backdrop style
+    let size = Number(1 + 20/this.seekBar.width());
+    let backDropStyle = {
+      'left': -10 + 'px',
+      'transform': 'scaleX(' + size + ')',
+      '-ms-transform': 'scaleX(' + size + ')',
+      '-webkit-transform': 'scaleX(' + size + ')',
+    }
+    this.seekBarBackdrop.css(backDropStyle);
+
     this.playbackPositionPercentage = percent;
 
     // Set position of the bar
@@ -791,7 +803,7 @@ export class SeekBar extends Component<SeekBarConfig> {
     if(element == this.seekBarPlaybackPosition) {
       console.log(this.seekBarPlaybackPosition)
       //      mark width + left offset
-      scale += 16/this.seekBar.width() + 0.007;
+      scale += 16/this.seekBar.width() + 7/this.seekBar.width();
 
 
       let style = {

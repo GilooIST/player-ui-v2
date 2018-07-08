@@ -169,18 +169,6 @@
 .#{$prefix}-ui-seekbar {
   @include seekbarMix(1.2em);
   height: 1.2em;
-  &::before {
-    content: "";
-    background-color: transparentize($color-primary, .8);
-    border-radius: 10px;
-    width: 100%;
-    height: 100%;
-
-    position: absolute;
-    top: 0;
-    left: 0;
-    transform: scaleX(1.02);
-  }
   // &::after {
   //   content: "";
   //   background: $color-red;
@@ -196,10 +184,16 @@
   .#{$prefix}-seekbar {
     // overflow: hidden;
     .#{$prefix}-seekbar-backdrop {
-      background: transparent !important;
+      background-color: transparentize($color-primary, .8);
+      border-radius: 10px;
+      width: 100%;
+      height: 100%;
+
+      position: absolute;
+      top: 0;
     }
     .#{$prefix}-seekbar-playbackposition {
-      left: -1%;
+      left: -10px;
     }
     .#{$prefix}-seekbar-playbackposition-marker {
       background: white;

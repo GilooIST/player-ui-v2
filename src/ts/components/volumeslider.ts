@@ -95,6 +95,42 @@ export class VolumeSlider extends SeekBar {
     return dummyVideoElement.volume !== 1;
   }
 
+  // [Todo]
+  // Here are lots of duplicated code from seekbar, because we want to override it!
+  // It needs time to seperate them!
+
+  /**
+   * Sets the position of the playback position indicator.
+   * Override func!!
+   * @param percent a number between 0 and 100 as returned by the player
+   */
+  setPlaybackPosition(percent: number) {
+    // Set position of the bar
+    // Make Red seekbar wrap the mark
+    this.setPosition(this.seekBarPlaybackPosition, percent);
+
+    // Set position of the marker
+    let totalSize = (this.config.vertical ? (this.seekBar.height() - this.seekBarPlaybackPositionMarker.height()) : this.seekBar.width());
+    let px = (totalSize) / 100 * percent;
+    if (this.config.vertical) {
+      px = this.seekBar.height() - px - this.seekBarPlaybackPositionMarker.height();
+    }
+    let style = this.config.vertical ?
+      // -ms-transform required for IE9
+      // -webkit-transform required for Android 4.4 WebView
+      {
+        'transform': 'translateY(' + px + 'px)',
+        '-ms-transform': 'translateY(' + px + 'px)',
+        '-webkit-transform': 'translateY(' + px + 'px)',
+      } :
+      {
+        'transform': 'translateX(' + px + 'px)',
+        '-ms-transform': 'translateX(' + px + 'px)',
+        '-webkit-transform': 'translateX(' + px + 'px)',
+      };
+    this.seekBarPlaybackPositionMarker.css(style);
+  }
+
   /**
    * Set the actual position (width or height) of a DOM element that represent a bar in the seek bar.
    * Override function!!

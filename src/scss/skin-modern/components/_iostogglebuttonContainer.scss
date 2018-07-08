@@ -43,7 +43,7 @@
 
 .#{$prefix}-ui-iosToggleButton:not(:checked) + .#{$prefix}-ui-IosToggleButtonLabel:after, .#{$prefix}-ui-iosToggleButton:checked + .#{$prefix}-ui-IosToggleButtonLabel:after {
   left: 0em;
-  top: .045em;
+  top: 0.05%;
   background-color: $color-red;
   border-radius: 50%;
   width: 1.5em;

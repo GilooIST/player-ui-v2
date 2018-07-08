@@ -723,7 +723,7 @@ export class SeekBar extends Component<SeekBarConfig> {
 
     // Set position of the bar
     // Make Red seekbar wrap the mark
-    this.setPosition(this.seekBarPlaybackPosition, percent+1);
+    this.setPosition(this.seekBarPlaybackPosition, percent);
 
     // Set position of the marker
     let totalSize = (this.config.vertical ? (this.seekBar.height() - this.seekBarPlaybackPositionMarker.height()) : this.seekBar.width());
@@ -788,9 +788,12 @@ export class SeekBar extends Component<SeekBarConfig> {
     if (scale >= 0.99999 && scale <= 1.00001) {
       scale = 0.99999;
     }
-
     if(element == this.seekBarPlaybackPosition) {
-      scale += 0.01;
+      
+      //      mark width + left offset
+      scale += 16/this.seekBar.width() + 0.007;
+
+
       let style = {
         'transform': 'scaleX(' + scale + ')',
         '-ms-transform': 'scaleX(' + scale + ')',

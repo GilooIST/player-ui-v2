@@ -179,7 +179,7 @@
     position: absolute;
     top: 0;
     left: 0;
-    transform: scaleX(1.015);
+    transform: scaleX(1.02);
   }
   // &::after {
   //   content: "";
@@ -199,7 +199,7 @@
       background: transparent !important;
     }
     .#{$prefix}-seekbar-playbackposition {
-      left: -10px;
+      left: -1%;
     }
     .#{$prefix}-seekbar-playbackposition-marker {
       background: white;

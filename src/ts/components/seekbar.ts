@@ -519,6 +519,7 @@ export class SeekBar extends Component<SeekBarConfig> {
       e.stopPropagation();
 
       let targetPercentage = 100 * this.getOffset(e);
+      console.log(this.getOffset(e));
       this.setSeekPosition(targetPercentage);
       this.setPlaybackPosition(targetPercentage);
       this.onSeekPreviewEvent(targetPercentage, true);
@@ -721,7 +722,8 @@ export class SeekBar extends Component<SeekBarConfig> {
     this.playbackPositionPercentage = percent;
 
     // Set position of the bar
-    this.setPosition(this.seekBarPlaybackPosition, percent);
+    // Make Red seekbar wrap the mark
+    this.setPosition(this.seekBarPlaybackPosition, percent+1);
 
     // Set position of the marker
     let totalSize = (this.config.vertical ? (this.seekBar.height() - this.seekBarPlaybackPositionMarker.height()) : this.seekBar.width());
@@ -785,6 +787,20 @@ export class SeekBar extends Component<SeekBarConfig> {
     // of exactly 1.
     if (scale >= 0.99999 && scale <= 1.00001) {
       scale = 0.99999;
+    }
+
+    if(element == this.seekBarPlaybackPosition) {
+      scale += 0.01;
+      let style = {
+        'transform': 'scaleX(' + scale + ')',
+        '-ms-transform': 'scaleX(' + scale + ')',
+        '-webkit-transform': 'scaleX(' + scale + ')',
+        'border-radius': Number(10/scale)+'px/10px',
+        '-ms-border-radius': Number(10/scale)+'px/10px',
+        '-webkit-border-radius': Number(10/scale)+'px/10px',
+      }
+      element.css(style);
+      return;
     }
 
     let style = this.config.vertical ?

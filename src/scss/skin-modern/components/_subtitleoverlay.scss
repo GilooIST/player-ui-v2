@@ -6,8 +6,9 @@
 
   @include hidden;
 
-  bottom: 2em;
-  font-size: 1.2em;
+  // Replacing the default font-size
+  bottom: 2.5em;
+  font-size: 2em;
   left: 3em;
   pointer-events: none;
   position: absolute;
@@ -30,7 +31,7 @@
 
   // Move the subtitle up above the controlbar when it appears to avoid them overlapping
   &.#{$prefix}-controlbar-visible {
-    bottom: 5em;
+    bottom: 2.5em;
     transition: bottom $animation-duration-short ease-in;
   }
 }

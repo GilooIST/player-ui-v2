@@ -519,7 +519,6 @@ export class SeekBar extends Component<SeekBarConfig> {
       e.stopPropagation();
 
       let targetPercentage = 100 * this.getOffset(e);
-      console.log(this.getOffset(e));
       this.setSeekPosition(targetPercentage);
       this.setPlaybackPosition(targetPercentage);
       this.onSeekPreviewEvent(targetPercentage, true);
@@ -801,7 +800,6 @@ export class SeekBar extends Component<SeekBarConfig> {
       scale = 0.99999;
     }
     if(element == this.seekBarPlaybackPosition) {
-      console.log(this.seekBarPlaybackPosition)
       //      mark width + left offset
       scale += 16/this.seekBar.width() + 7/this.seekBar.width();
 

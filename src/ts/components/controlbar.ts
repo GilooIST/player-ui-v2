@@ -40,6 +40,12 @@ export class ControlBar extends Container<ControlBarConfig> {
 
       // Subscribe hover event and keep a count of the number of hovered children
       component.onHoverChanged.subscribe((sender, args) => {
+        /**
+         * Rewrite reason
+         * itemListSelector: When I click a option, mouse enter event would trans addtional one.
+         * closeButton: I click close button, can't fire hovered Changed
+         */
+        if(sender.getConfig().cssClass == 'ui-itemselectionlist' || sender.getConfig().cssClass == 'ui-closebutton') return;
         if (args.hovered) {
           hoverStackCount++;
         } else {

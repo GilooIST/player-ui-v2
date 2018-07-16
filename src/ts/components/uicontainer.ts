@@ -81,7 +81,7 @@ export class UIContainer extends Container<UIContainerConfig> {
         // Issue a preview event to check if we are good to hide the controls
         let previewHideEventArgs = <CancelEventArgs>{};
         uimanager.onPreviewControlsHide.dispatch(this, previewHideEventArgs);
-
+        
         if (!previewHideEventArgs.cancel) {
           // If the preview wasn't canceled, let subscribers know that they should now hide themselves
           uimanager.onControlsHide.dispatch(this);

@@ -8,7 +8,8 @@
   margin-right: 15px !important;
 
   &:hover {
-    @include svg-icon-shadow;
+    // @include svg-icon-shadow;
+    background-image: svg('assets/skin-modern/images/settingsX.svg');
   }
 
   &.#{$prefix}-on {
@@ -23,7 +24,8 @@
   margin-right: 15px !important;
 
   &:hover {
-    @include svg-icon-shadow;
+    // @include svg-icon-shadow;
+    background-image: svg('assets/skin-modern/images/subtitleSettingX.svg');
   }
 
   &.#{$prefix}-on {

@@ -4,17 +4,23 @@
 .#{$prefix}-ui-volumetogglebutton {
   @extend %ui-button;
 
-  &:hover {
-    @include svg-icon-shadow;
-  }
+  // &:hover {
+  //   @include svg-icon-shadow;
+  // }
 
   &.#{$prefix}-muted {
     background-image: svg('assets/skin-modern/images/music-off.svg');
+    &:hover {
+      background-image: svg('assets/skin-modern/images/music-off-hover.svg');
+    }
   }
 
   &.#{$prefix}-unmuted {
     &[data-#{$prefix}-volume-level-tens='0'] {
       background-image: svg('assets/skin-modern/images/music-off.svg');
+      &:hover {
+        background-image: svg('assets/skin-modern/images/music-off-hover.svg');
+      }
     }
 
     &[data-#{$prefix}-volume-level-tens='1'],
@@ -23,6 +29,9 @@
     &[data-#{$prefix}-volume-level-tens='4'],
     &[data-#{$prefix}-volume-level-tens='5'] {
       background-image: svg('assets/skin-modern/images/music-low.svg');
+      &:hover {
+        background-image: svg('assets/skin-modern/images/music-low-hover.svg');
+      }
     }
 
     &[data-#{$prefix}-volume-level-tens='6'],
@@ -31,6 +40,9 @@
     &[data-#{$prefix}-volume-level-tens='9'],
     &[data-#{$prefix}-volume-level-tens='10'] {
       background-image: svg('assets/skin-modern/images/music-on.svg');
+      &:hover {
+        background-image: svg('assets/skin-modern/images/music-on-hover.svg');
+      }
     }
   }
 }

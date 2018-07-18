@@ -14,12 +14,18 @@
   @extend %ui-button;
   @extend %timeShift;
   left: calc(50% - 130px);
-  background-image: svg('assets/skin-modern/images/move-back.svg')
+  background-image: svg('assets/skin-modern/images/move-back.svg');
+  &:hover {
+    background-image: svg('assets/skin-modern/images/move-back-hover.svg');
+  }
 }
 
 .#{$prefix}-ui-timeShiftButton-moveForward {
   @extend %ui-button;
   @extend %timeShift;
   right: calc(50% - 130px);
-  background-image: svg('assets/skin-modern/images/move-forward.svg')
+  background-image: svg('assets/skin-modern/images/move-forward.svg');
+  &:hover {
+    background-image: svg('assets/skin-modern/images/move-forward-hover.svg');
+  }
 }

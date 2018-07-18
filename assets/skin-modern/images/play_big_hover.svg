@@ -1,0 +1,11 @@
+<svg width="80px" height="80px" viewBox="0 0 80 80" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <defs></defs>
+    <g id="Player" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Guideline" transform="translate(-658.000000, -1635.000000)" stroke-width="2">
+            <g id="ic_player_play" transform="translate(658.000000, 1635.000000)">
+                <path d="M40,79 C61.5653623,79 79,61.5653623 79,40 C79,18.4346377 61.5653623,1 40,1 C18.4346377,1 1,18.4346377 1,40 C1,61.5653623 18.4346377,79 40,79 Z" id="Shape" stroke="#FFFFFF" fill="#FCFCFC" fill-rule="nonzero" opacity="0.8"></path>
+                <path d="M44.3238793,28.9907529 L56.856421,47.5472993 C57.4746306,48.462663 57.2337395,49.7058698 56.3183758,50.3240793 C55.987772,50.5473593 55.597948,50.6666667 55.1990084,50.6666667 L30.1339249,50.6666667 C29.0293554,50.6666667 28.1339249,49.7712362 28.1339249,48.6666667 C28.1339249,48.2677271 28.2532323,47.877903 28.4765123,47.5472993 L41.009054,28.9907529 C41.6272636,28.0753892 42.8704703,27.8344982 43.7858341,28.4527077 C43.9979613,28.5959722 44.1806148,28.7786257 44.3238793,28.9907529 Z" id="Triangle" stroke="#EA2B40" stroke-linecap="round" stroke-linejoin="round" transform="translate(42.666667, 40.000000) rotate(90.000000) translate(-42.666667, -40.000000) "></path>
+            </g>
+        </g>
+    </g>
+</svg>

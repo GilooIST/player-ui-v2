@@ -1,0 +1,14 @@
+<svg width="80px" height="80px" viewBox="0 0 80 80" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <defs></defs>
+    <g id="Player" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Guideline" transform="translate(-658.000000, -1779.000000)">
+            <g id="ic_player_pause" transform="translate(658.000000, 1779.000000)">
+                <path d="M40,79 C61.5653623,79 79,61.5653623 79,40 C79,18.4346377 61.5653623,1 40,1 C18.4346377,1 1,18.4346377 1,40 C1,61.5653623 18.4346377,79 40,79 Z" id="Shape" stroke="#FFFFFF" stroke-width="2" fill="#FCFCFC" fill-rule="nonzero" opacity="0.8"></path>
+                <g id="puase" transform="translate(30.666667, 26.666667)" stroke="#EA2B40" stroke-linecap="round" stroke-linejoin="round" stroke-width="4">
+                    <path d="M1.33333333,0 L1.33333333,26.6666667" id="Line"></path>
+                    <path d="M17.3333333,0 L17.3333333,26.6666667" id="Line"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

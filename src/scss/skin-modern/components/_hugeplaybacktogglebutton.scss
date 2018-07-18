@@ -50,29 +50,38 @@
   .#{$prefix}-image {
     background-position: center;
     background-repeat: no-repeat;
-    background-size: 4.5em; // Smaller for sketch
-    height: 100%;
-    width: 100%;
+    // background-size: 4.5em; // Smaller for sketch
+    height: 80px;
+    width: 80px;
+    
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
 
+    cursor: pointer;
+    
     // &:hover {
     //   animation: breathe 3s ease-in-out infinite;
     // }
+    
   }
 
   &.#{$prefix}-on {
     .#{$prefix}-image {
       background-image: svg('assets/skin-modern/images/pause_big.svg');
-  //     animation: fade-out $animation-duration cubic-bezier(.55, .055, .675, .19); // http://easings.net/de#easeInCubic
-  //     transition: visibility 0s $animation-duration;
-  //     visibility: hidden;
+      &:hover {
+        background-image: svg('assets/skin-modern/images/pause_big_hover.svg');
+      }
     }
   }
 
   &.#{$prefix}-off {
     .#{$prefix}-image {
       background-image: svg('assets/skin-modern/images/play_big.svg');
-  //     animation: fade-in $animation-duration cubic-bezier(.55, .055, .675, .19); // http://easings.net/de#easeInCubic
-  //     visibility: visible;
+      &:hover {
+        background-image: svg('assets/skin-modern/images/play_big_hover.svg');
+      }
     }
   }
 }

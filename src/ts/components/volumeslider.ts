@@ -166,9 +166,10 @@ export class VolumeSlider extends SeekBar {
         '-webkit-transform': 'scaleY(' + scale + ')'
       } :
       {
-        'transform': 'scaleX(' + scale + ')',
-        '-ms-transform': 'scaleX(' + scale + ')',
-        '-webkit-transform': 'scaleX(' + scale + ')'
+        // 'transform': 'scaleX(' + scale + ')',
+        // '-ms-transform': 'scaleX(' + scale + ')',
+        // '-webkit-transform': 'scaleX(' + scale + ')',
+        'width': `${percent}%`
       };
     element.css(style);
   }

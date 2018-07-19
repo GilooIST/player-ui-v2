@@ -183,6 +183,7 @@
   // }
   .#{$prefix}-seekbar {
     // overflow: hidden;
+    position: relative;
     .#{$prefix}-seekbar-backdrop {
       background-color: transparentize($color-primary, .8);
       border-radius: 10px;
@@ -198,7 +199,7 @@
     .#{$prefix}-seekbar-playbackposition-marker {
       background: white;
       border-radius: 50%;
-      top: 10%;
+      top: calc(50% - .5015em);
       z-index: 8;
     }
   }

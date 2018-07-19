@@ -718,8 +718,6 @@ export class SeekBar extends Component<SeekBarConfig> {
    * @param percent a number between 0 and 100 as returned by the player
    */
   setPlaybackPosition(percent: number) {
-
-
     // Force Update backdrop style
     let size = Number(1 + 20/this.seekBar.width());
     let backDropStyle = {

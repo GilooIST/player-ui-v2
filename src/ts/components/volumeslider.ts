@@ -1,6 +1,7 @@
 import {SeekBar, SeekBarConfig} from './seekbar';
 import {UIInstanceManager} from '../uimanager';
 import {DOM} from '../dom';
+import PlayerAPI = bitmovin.PlayerAPI;
 
 /**
  * Configuration interface for the {@link VolumeSlider} component.
@@ -45,9 +46,9 @@ export class VolumeSlider extends SeekBar {
 
     let volumeChangeHandler = () => {
       if (player.isMuted()) {
-        this.setPlaybackPosition(0);
+        this.setPlaybackPosition(0,1);
       } else {
-        this.setPlaybackPosition(player.getVolume());
+        this.setPlaybackPosition(player.getVolume(),1);
       }
     };
 
@@ -104,9 +105,13 @@ export class VolumeSlider extends SeekBar {
    * Override func!!
    * @param percent a number between 0 and 100 as returned by the player
    */
-  setPlaybackPosition(percent: number) {
+  setPlaybackPosition(percent: number,issuer?: number) {
     // Set position of the bar
     // Make Red seekbar wrap the mark
+
+    // Avoid seekbar.ts override call
+    if(issuer != 1) return;
+
     this.setPosition(this.seekBarPlaybackPosition, percent);
 
     // Set position of the marker
@@ -159,18 +164,12 @@ export class VolumeSlider extends SeekBar {
       {
         'transform': 'scaleY(' + scale + ')',
         '-ms-transform': 'scaleY(' + scale + ')',
-        '-webkit-transform': 'scaleY(' + scale + ')',
-        'border-radius': Number(10/scale)+'px/10px',
-        '-ms-border-radius': Number(10/scale)+'px/10px',
-        '-webkit-border-radius': Number(10/scale)+'px/10px',
+        '-webkit-transform': 'scaleY(' + scale + ')'
       } :
       {
         'transform': 'scaleX(' + scale + ')',
         '-ms-transform': 'scaleX(' + scale + ')',
-        '-webkit-transform': 'scaleX(' + scale + ')',
-        'border-radius': Number(10/scale)+'px/10px',
-        '-ms-border-radius': Number(10/scale)+'px/10px',
-        '-webkit-border-radius': Number(10/scale)+'px/10px',
+        '-webkit-transform': 'scaleX(' + scale + ')'
       };
     element.css(style);
   }

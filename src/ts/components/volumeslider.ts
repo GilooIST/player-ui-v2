@@ -1,7 +1,6 @@
 import {SeekBar, SeekBarConfig} from './seekbar';
 import {UIInstanceManager} from '../uimanager';
 import {DOM} from '../dom';
-import PlayerAPI = bitmovin.PlayerAPI;
 
 /**
  * Configuration interface for the {@link VolumeSlider} component.

@@ -8,6 +8,7 @@
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
+  @include hidden-animated;
 }
 
 .#{$prefix}-ui-timeShiftButton-moveBack {

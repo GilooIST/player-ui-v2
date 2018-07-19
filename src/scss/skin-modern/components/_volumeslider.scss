@@ -14,5 +14,9 @@
     .#{$prefix}-seekbar-bufferlevel {
       display: none;
     }
+    // Css error~ minor fix
+    .#{$prefix}-seekbar-backdrop {
+      height: 1.88em;
+    }
   }
 }

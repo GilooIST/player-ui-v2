@@ -61,6 +61,7 @@ export class SubtitleSelectionList extends ItemSelectionList {
     let translate = [
       {key: 'off',value: '無'},
       {key: 'en',value: '英文'},
+      {key: 'ENG',value: '英文'},
       {key: 'zh_tw',value: '中文'},
       {key: 'de',value: '德文'},
       {key: 'es',value: '西班牙文'},

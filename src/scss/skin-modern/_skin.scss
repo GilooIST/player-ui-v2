@@ -63,12 +63,12 @@
     }
   }
 
-  &.#{$prefix}-player-state-finished {
-    .#{$prefix}-ui-controlbar,
-    .#{$prefix}-ui-hugeplaybacktogglebutton {
-      display: none;
-    }
-  }
+  // &.#{$prefix}-player-state-finished {
+  //   .#{$prefix}-ui-controlbar,
+  //   .#{$prefix}-ui-hugeplaybacktogglebutton {
+  //     display: none;
+  //   }
+  // }
 
   .#{$prefix}-text-right {
     text-align: right;

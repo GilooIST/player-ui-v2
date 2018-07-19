@@ -65,7 +65,6 @@ export class PlaybackSpeedSelectContainer<Config> extends Container<PlaybackSpee
 
 
     let playbackSpeedChanged = () => {
-      console.log("in~");
       this.currentModeLabel.setText(this.selectionList.getCurrentMode());
       this.selectionListContainer.hide();
     }

@@ -56,6 +56,11 @@ export class PlaybackSpeedSelectContainer<Config> extends Container<PlaybackSpee
       this.selectionListContainer.hide();
     }
 
+    let playbackSpeedChanged = () => {
+      this.currentModeLabel.setText(this.selectionList.getCurrentMode());
+      this.selectionListContainer.hide();
+    }
+
     // Update qualities when source goes away
     player.addEventHandler(player.EVENT.ON_SOURCE_UNLOADED, resetPanelDisplay);
     // Update qualities when a new source is loaded
@@ -63,14 +68,23 @@ export class PlaybackSpeedSelectContainer<Config> extends Container<PlaybackSpee
     // Update qualities when the period within a source changes
     player.addEventHandler(player.EVENT.ON_PERIOD_SWITCHED, resetPanelDisplay);
 
+    // PlayBackSpeed Changed!
+    // If 7.8 in production , we may remove replace below code !
+    this.selectionList.onItemSelected.subscribe(()=> {
+      setTimeout(()=>{playbackSpeedChanged()},50);
+    });
 
-    let playbackSpeedChanged = () => {
-      this.currentModeLabel.setText(this.selectionList.getCurrentMode());
-      this.selectionListContainer.hide();
-    }
+    // Update qualities when source goes away
+    player.addEventHandler(player.EVENT.ON_SOURCE_UNLOADED, playbackSpeedChanged);
+    // Update qualities when a new source is loaded
+    player.addEventHandler(player.EVENT.ON_READY, playbackSpeedChanged);
+    // Update qualities when the period within a source changes
+    player.addEventHandler(player.EVENT.ON_PERIOD_SWITCHED, playbackSpeedChanged);
 
+
+    // Supported By bitmovin 7.8 BETA , but 7.8 BETA got some sources code error !
     // Update quality selection when quality is changed (from outside)
-    player.addEventHandler(player.EVENT.ON_PLAYBACK_SPEED_CHANGED, playbackSpeedChanged);
+    // player.addEventHandler(player.EVENT.ON_PLAYBACK_SPEED_CHANGED, playbackSpeedChanged);
 
   }
 }

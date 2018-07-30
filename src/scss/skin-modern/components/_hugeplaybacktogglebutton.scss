@@ -47,4 +47,14 @@
       }
     }
   }
+
+  &.#{$prefix}-no-transition-animations {
+    &.#{$prefix}-on,
+    &.#{$prefix}-off {
+      .#{$prefix}-image {
+        animation: none;
+        transition: none;
+      }
+    }
+  }
 }

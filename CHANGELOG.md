@@ -4,6 +4,43 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/) 
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## [2.17.0]
+
+### Added
+- `AirPlayToggleButton` to `modernSmallScreenUI` for MacOS devices
+- `PictureInPictureToggleButton` to `modernSmallScreenUI` for MacOS devices
+- `UIConfig.playbackSpeedSelectionEnabled` option to show/hide `PlaybackSpeedSelectBox` within the `SettingsPanel`
+
+### Changed
+- `PlaybackSpeedSelectBox` is no longer visible within the `SettingsPanel` by default
+
+### Fixed
+- Apply the IE/Firefox workaround of v2.16.0 to hide the hovered dropdown panel of a `SelectBox` also when the UI hides
+
+## [2.16.0]
+
+### Added
+- Revert state of `PlaybackToggleButton` to paused if a play attempt is rejected (`ON_WARNING 5008`; e.g. in case of autoplay)
+- `UIManager` API to dynamically manage `SeekBar` markers: `getTimelineMarkers`, `addTimelineMarker`, `removeTimelineMarker` ([#103](https://github.com/bitmovin/bitmovin-player-ui/issues/103))
+- Interval marking with added property `TimelineMarker.duration` ([#103](https://github.com/bitmovin/bitmovin-player-ui/issues/103))
+- Custom CSS classes on markers in `SeekBar` and `SeekBarLabel` through `TimelineMarker.cssClasses` ([#103](https://github.com/bitmovin/bitmovin-player-ui/issues/103))
+- `ListSelectorConfig.filter` to filter items of auto-populated `SelectBox` implementations, e.g. `SubtitleSelectBox` ([#117](https://github.com/bitmovin/bitmovin-player-ui/pull/117))
+- `ListSelectorConfig.translator` to translate item labels of auto-populated `SelectBox` implementations, e.g. `SubtitleSelectBox` ([#117](https://github.com/bitmovin/bitmovin-player-ui/pull/117))
+
+### Changed
+- Animate `HugePlaybackToggleButton` only on state changes (not when UI is initially loaded)
+- Hide `HugePlaybackToggleButton` play animation when `config.playback.autoplay` is enabled or the player is already playing
+- Consolidated configuration management of `UIConfig` from components into `UIManager`
+- Configuration from the player source now takes precedence over the configuration passed into the `UIManager`
+
+### Fixed
+- IE & Firefox could leave the dropdown panel of an active/hovered `SelectBox` floating after the parent container (e.g. `SettingsPanel`) was hidden
+
+## [2.15.0]
+
+### Added
+- `UIManager` API to switch UI variants: `UIConfig.autoUiVariantResolve`, `onUiVariantResolve` event, `getUiVariants`, `resolveUiVariant`, `switchToUiVariant` ([#102](https://github.com/bitmovin/bitmovin-player-ui/pull/102))
+
 ## [2.14.0]
 
 License change from LGPLv3 to MIT.
@@ -341,6 +378,9 @@ Version 2.0 of the UI framework is built for player 7.1. If absolutely necessary
 ## 1.0.0 - 2017-02-03
 - First release
 
+[2.17.0]: https://github.com/bitmovin/bitmovin-player-ui/compare/v2.16.0...v2.17.0
+[2.16.0]: https://github.com/bitmovin/bitmovin-player-ui/compare/v2.15.0...v2.16.0
+[2.15.0]: https://github.com/bitmovin/bitmovin-player-ui/compare/v2.14.0...v2.15.0
 [2.14.0]: https://github.com/bitmovin/bitmovin-player-ui/compare/v2.13.0...v2.14.0
 [2.13.0]: https://github.com/bitmovin/bitmovin-player-ui/compare/v2.12.1...v2.13.0
 [2.12.1]: https://github.com/bitmovin/bitmovin-player-ui/compare/v2.12.0...v2.12.1

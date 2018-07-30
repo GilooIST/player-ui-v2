@@ -55,6 +55,7 @@ export class ControlBar extends Container<ControlBarConfig> {
     });
 
     uimanager.onControlsShow.subscribe(() => {
+      player.fireEvent(player.EVENT.ON_SHOW_CONTROLS,{});
       this.show();
     });
     uimanager.onPreviewControlsHide.subscribe((sender, args) => {
@@ -62,6 +63,7 @@ export class ControlBar extends Container<ControlBarConfig> {
       args.cancel = (hoverStackCount > 0);
     });
     uimanager.onControlsHide.subscribe(() => {
+      player.fireEvent(player.EVENT.ON_HIDE_CONTROLS,{});
       this.hide();
     });
   }

@@ -87,99 +87,86 @@
 <script type="text/javascript">
   var sources = {
     fullyFeatured: {
-      dash: '//bitdash-a.akamaihd.net/content/sintel/sintel.mpd',
-      hls: '//bitdash-a.akamaihd.net/content/sintel/hls/playlist.m3u8',
-      progressive: [
-        {url: '//bitdash-a.akamaihd.net/content/sintel/Sintel.mp4', type: 'video/mp4'},
-        {url: '//bitdash-a.akamaihd.net/content/sintel/Sintel.webm', type: 'video/webm'}
-      ],
-      poster: '//bitdash-a.akamaihd.net/content/sintel/poster.png',
-      tracks: [{
-        file: '//bitdash-a.akamaihd.net/content/sintel/sprite/sprite.vtt',
-        kind: 'thumbnails'
-      }],
-      title: 'Sintel',
-      description: 'A woman, Sintel, is attacked while traveling through a wintry mountainside. After defeating her attacker and taking his spear, she finds refuge in a shaman\'s hut...',
-<<<<<<< HEAD
-      // markers: [
-      //   {time: 0, title: 'Intro'},
-      //   {time: 102, title: 'Old Guy'},
-      //   {time: 150, title: 'City'},
-      //   {time: 200, title: 'Dragon'},
-      //   {time: 370, title: 'Desert'},
-      //   {time: 385, title: 'Bamboo Forest'},
-      //   {time: 410, title: 'Winter again'},
-      //   {time: 755, title: 'Credits'},
-      // ],
-=======
-      markers: [
-        {time: 0, title: 'Intro'},
-        {time: 102, title: 'Old Guy', duration: 30},
-        {time: 150, title: 'City', cssClasses: ['class1', 'class2']},
-        {time: 200, title: 'Dragon'},
-        {time: 370, title: 'Desert'},
-        {time: 385, title: 'Bamboo Forest'},
-        {time: 410, title: 'Winter again'},
-        {time: 755, title: 'Credits'},
-      ],
->>>>>>> f178bd04dd875b030f036830e4a3f7076d9a84ef
-      recommendations: [
-        {title: 'Recommendation 1: The best video ever', url: 'http://bitmovin.com', thumbnail: 'http://placehold.it/300x300', duration: 10.4},
-        {title: 'Recommendation 2: The second best video', url: 'http://bitmovin.com', thumbnail: 'http://placehold.it/300x300', duration: 64},
-        {title: 'Recommendation 3: The third best video of all time', url: 'http://bitmovin.com', thumbnail: 'http://placehold.it/300x300', duration: 195},
-      ],
+      dash: 'https://cdn2.giloo.ist/1/1_abc6284309fa9282e28d2b5618ea69d9/1505514137_dash.mpd',
+      // hls: '//bitdash-a.akamaihd.net/content/sintel/hls/playlist.m3u8',
+    //   progressive: [
+    //     {url: '//bitdash-a.akamaihd.net/content/sintel/Sintel.mp4', type: 'video/mp4'},
+    //     {url: '//bitdash-a.akamaihd.net/content/sintel/Sintel.webm', type: 'video/webm'}
+    //   ],
+    //   poster: '//bitdash-a.akamaihd.net/content/sintel/poster.png',
+    //   tracks: [{
+    //     file: '//bitdash-a.akamaihd.net/content/sintel/sprite/sprite.vtt',
+    //     kind: 'thumbnails'
+    //   }],
+    //   title: 'Sintel',
+    //   description: 'A woman, Sintel, is attacked while traveling through a wintry mountainside. After defeating her attacker and taking his spear, she finds refuge in a shaman\'s hut...',
+    //   // markers: [
+    //   //   {time: 0, title: 'Intro'},
+    //   //   {time: 102, title: 'Old Guy'},
+    //   //   {time: 150, title: 'City'},
+    //   //   {time: 200, title: 'Dragon'},
+    //   //   {time: 370, title: 'Desert'},
+    //   //   {time: 385, title: 'Bamboo Forest'},
+    //   //   {time: 410, title: 'Winter again'},
+    //   //   {time: 755, title: 'Credits'},
+    //   // ],
+    //   recommendations: [
+    //     {title: 'Recommendation 1: The best video ever', url: 'http://bitmovin.com', thumbnail: 'http://placehold.it/300x300', duration: 10.4},
+    //     {title: 'Recommendation 2: The second best video', url: 'http://bitmovin.com', thumbnail: 'http://placehold.it/300x300', duration: 64},
+    //     {title: 'Recommendation 3: The third best video of all time', url: 'http://bitmovin.com', thumbnail: 'http://placehold.it/300x300', duration: 195},
+    //   ],
     },
-    basicProgressive: {
-      progressive: '//bitdash-a.akamaihd.net/content/sintel/Sintel.mp4',
-      poster: '//bitdash-a.akamaihd.net/content/sintel/poster.png',
-    },
-    basicMultiProgressive: {
-      progressive: [
-        {url: '//bitdash-a.akamaihd.net/content/sintel/Sintel.mp4', type: 'video/mp4', label: 'quality1'},
-        {url: '//bitdash-a.akamaihd.net/content/sintel/Sintel.mp4', type: 'video/mp4', label: 'quality2'},
-      ],
-    },
-    basicHls: {
-      hls: "//bitdash-a.akamaihd.net/content/sintel/hls/playlist.m3u8",
-      poster: '//bitdash-a.akamaihd.net/content/sintel/poster.png',
-    },
-    basicDash: {
-      dash: 'http://bitdash-a.akamaihd.net/content/sintel/sintel.mpd'
-    },
-    basicDashAudioOnly: {
-      dash: 'http://bitmovin-a.akamaihd.net/content/sintel/sintel-audio.mpd'
-    },
-    basicDashVideoOnly: {
-      dash: 'http://bitmovin-a.akamaihd.net/content/sintel/sintel-video.mpd'
-    },
-    errorInvalidHost: {
-      dash: 'http://invalid/url/to/nonexistent/mpd.mpd'
-    },
-    errorMissingMpd: {
-      dash: 'http://bitdash-a.akamaihd.net/content/sintel/sintellll.mpd'
-    },
-    vr: {
-      dash: 'https://bitmovin-a.akamaihd.net/content/playhouse-vr/mpds/105560.mpd',
-      vr: {
-        contentType: 'single'
-      }
-    },
-    posterAndThumbnails: {
-      dash: '//bitdash-a.akamaihd.net/content/MI201109210084_1/mpds/f08e80da-bf1d-4e3d-8899-f0f6155f6efa.mpd',
-      hls: '//bitdash-a.akamaihd.net/content/MI201109210084_1/m3u8s/f08e80da-bf1d-4e3d-8899-f0f6155f6efa.m3u8',
-      progressive: '//bitdash-a.akamaihd.net/content/MI201109210084_1/MI201109210084_mpeg-4_hd_high_1080p25_10mbits.mp4',
-      poster: '//bitdash-a.akamaihd.net/content/art-of-motion_drm/art-of-motion_poster.jpg',
-      tracks: [{
-        file: 'https://bitdash-a.akamaihd.net/content/MI201109210084_1/thumbnails/f08e80da-bf1d-4e3d-8899-f0f6155f6efa.vtt',
-        kind: 'thumbnails'
-      }], userId: 'demo_html5_vts', videoId: 'art-of-motion'
-    },
-    live: {
-      dash: 'http://bitcdn-kronehit-live.bitmovin.com/mpds/stream-full.php?streamkey=bitcodin&segmenthost=bitcdn-kronehit-live.bitmovin.com&liveoffset=20'
-    },
-    liveWithTimeshift: {
-      dash: 'http://demo-dash-live.zahs.tv/hd/manifest.mpd?timeshift=100'
-    }
+    // basicProgressive: {
+    //   progressive: '//bitdash-a.akamaihd.net/content/sintel/Sintel.mp4',
+    //   poster: '//bitdash-a.akamaihd.net/content/sintel/poster.png',
+    // },
+    // basicMultiProgressive: {
+    //   progressive: [
+    //     {url: '//bitdash-a.akamaihd.net/content/sintel/Sintel.mp4', type: 'video/mp4', label: 'quality1'},
+    //     {url: '//bitdash-a.akamaihd.net/content/sintel/Sintel.mp4', type: 'video/mp4', label: 'quality2'},
+    //   ],
+    // },
+    // basicHls: {
+    //   hls: "//bitdash-a.akamaihd.net/content/sintel/hls/playlist.m3u8",
+    //   poster: '//bitdash-a.akamaihd.net/content/sintel/poster.png',
+    // },
+    // basicDash: {
+    //   dash: 'http://bitdash-a.akamaihd.net/content/sintel/sintel.mpd'
+    // },
+    // basicDashAudioOnly: {
+    //   dash: 'http://bitmovin-a.akamaihd.net/content/sintel/sintel-audio.mpd'
+    // },
+    // basicDashVideoOnly: {
+    //   dash: 'http://bitmovin-a.akamaihd.net/content/sintel/sintel-video.mpd'
+    // },
+    // errorInvalidHost: {
+    //   dash: 'http://invalid/url/to/nonexistent/mpd.mpd'
+    // },
+    // errorMissingMpd: {
+    //   dash: 'http://bitdash-a.akamaihd.net/content/sintel/sintellll.mpd'
+    // },
+    // vr: {
+    //   dash: 'https://bitmovin-a.akamaihd.net/content/playhouse-vr/mpds/105560.mpd',
+    //   vr: {
+    //     contentType: 'single'
+    //   }
+    // },
+    // posterAndThumbnails: {
+    //   dash: '//bitdash-a.akamaihd.net/content/MI201109210084_1/mpds/f08e80da-bf1d-4e3d-8899-f0f6155f6efa.mpd',
+    //   hls: '//bitdash-a.akamaihd.net/content/MI201109210084_1/m3u8s/f08e80da-bf1d-4e3d-8899-f0f6155f6efa.m3u8',
+    //   progressive: '//bitdash-a.akamaihd.net/content/MI201109210084_1/MI201109210084_mpeg-4_hd_high_1080p25_10mbits.mp4',
+    //   poster: '//bitdash-a.akamaihd.net/content/art-of-motion_drm/art-of-motion_poster.jpg',
+    //   tracks: [{
+    //     file: 'https://bitdash-a.akamaihd.net/content/MI201109210084_1/thumbnails/f08e80da-bf1d-4e3d-8899-f0f6155f6efa.vtt',
+    //     kind: 'thumbnails'
+    //   }], userId: 'demo_html5_vts', videoId: 'art-of-motion'
+    // },
+    // live: {
+    //   dash: 'http://bitcdn-kronehit-live.bitmovin.com/mpds/stream-full.php?streamkey=bitcodin&segmenthost=bitcdn-kronehit-live.bitmovin.com&liveoffset=20'
+    // },
+    // liveWithTimeshift: {
+    //   dash: 'http://demo-dash-live.zahs.tv/hd/manifest.mpd?timeshift=100'
+    // },
   };
 
   var advertisingConfig = {
@@ -223,7 +210,12 @@
     cast: {
       enable: true
     },
-    advertising: adsEnabled ? advertisingConfig : null
+    advertising: adsEnabled ? advertisingConfig : null,
+    drm: {
+      widevine: {
+        LA_URL: 'https://license2.giloo.ist/'
+      }
+    }
   };
 
   var uiConfig = {

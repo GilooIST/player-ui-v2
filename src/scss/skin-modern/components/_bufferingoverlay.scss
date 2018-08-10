@@ -63,17 +63,17 @@
       }
     }
 
-    animation: fancy $buffering-animation-duration ease-in infinite;
-    background: svg('assets/skin-modern/images/loader.svg') no-repeat center;
+    // animation: fancy $buffering-animation-duration ease-in infinite;
+    background: svg('assets/skin-modern/images/spinner_logo.svg') no-repeat center;
     display: inline-block;
-    height: 2em;
+    height: 10em;
     margin: .2em;
-    width: 2em;
+    width: 10em;
 
-    @for $i from 1 through 3 {
-      &:nth-child(#{$i}) {
-        animation-delay: $buffering-animation-delay * ($i - 1);
-      }
-    }
+    // @for $i from 1 through 3 {
+    //   &:nth-child(#{$i}) {
+    //     animation-delay: $buffering-animation-delay * ($i - 1);
+    //   }
+    // }
   }
 }

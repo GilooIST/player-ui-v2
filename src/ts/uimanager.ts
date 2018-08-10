@@ -624,6 +624,17 @@ export namespace UIManager.Factory {
       new SubtitleSelectionList()
     ]);
 
+    // 讓兩個 settingPanels 不得同時展開
+    let subtitlesPanelButton = new SettingsToggleButton({ settingsPanel: subtitleSettingsPanel,cssClass:'ui-subtitle-settings-toggle-button'});
+    let settingPanelButton = new SettingsToggleButton({ settingsPanel: settingsPanel,cssClass:'ui-settings-toggle-button' });
+
+    subtitlesPanelButton.onClick.subscribe(() => {
+      if (settingsPanel.isShown()) settingsPanel.hide();
+    });
+
+    settingPanelButton.onClick.subscribe(() => {
+      if (subtitleSettingsPanel.isShown()) subtitleSettingsPanel.hide();
+    })
     // let subtitleSettingsPanel = new SubtitleSettingsPanel({
     //   hidden: true,
     //   overlay: subtitleOverlay,
@@ -664,8 +675,8 @@ export namespace UIManager.Factory {
             // new AirPlayToggleButton(),
             // new CastToggleButton(),
             // new VRToggleButton(),
-            new SettingsToggleButton({ settingsPanel: subtitleSettingsPanel,cssClass:'ui-subtitle-settings-toggle-button'}),
-            new SettingsToggleButton({ settingsPanel: settingsPanel,cssClass:'ui-settings-toggle-button' }),
+            subtitlesPanelButton,
+            settingPanelButton,
             new FullscreenToggleButton(),
           ],
           cssClasses: ['controlbar-bottom'],

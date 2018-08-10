@@ -39,6 +39,12 @@ export class Button<Config extends ButtonConfig> extends Component<ButtonConfig>
       'class': this.prefixCss('label'),
     }).html(this.config.text));
 
+    // Cancel default button accessibility , let spacebar trigger click event
+    // 為了讓網頁全域監聽 spacebar 為播放或停止。
+    buttonElement.on('keyup', (e) => {
+      e.preventDefault();
+    });
+
     // Listen for the click event on the button element and trigger the corresponding event on the button component
     buttonElement.on('click', () => {
       this.onClickEvent();

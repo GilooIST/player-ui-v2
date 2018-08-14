@@ -8,7 +8,7 @@
 
   // Replacing the default font-size
   bottom: 2.5em;
-  font-size: 4em;
+  font-size: 3em;
   left: 3em;
   pointer-events: none;
   position: absolute;
@@ -33,5 +33,11 @@
   &.#{$prefix}-controlbar-visible {
     bottom: 2.5em;
     transition: bottom $animation-duration-short ease-in;
+  }
+}
+
+@media all and (min-width: 1440px) {
+  .#{$prefix}-ui-subtitle-overlay {
+    font-size: 2.5em;
   }
 }

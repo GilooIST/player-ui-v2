@@ -17,6 +17,7 @@
 
   width: 12em;
   height: 12em;
+  overflow: hidden; // 有些螢幕會有 scroll bar 出現
 
   .#{$prefix}-container-wrapper {
     .#{$prefix}-ui-settings-panel-item {

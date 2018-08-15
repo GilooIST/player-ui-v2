@@ -7,7 +7,7 @@
   @include hidden;
 
   // Replacing the default font-size
-  bottom: 2.5em;
+  bottom: 10%;
   font-size: 3em;
   left: 3em;
   pointer-events: none;
@@ -36,7 +36,7 @@
   }
 }
 
-@media all and (min-width: 1440px) {
+@media all and (max-width: 1440px) {
   .#{$prefix}-ui-subtitle-overlay {
     font-size: 2.5em;
   }

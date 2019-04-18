@@ -87,17 +87,17 @@
 <script type="text/javascript">
   var sources = {
     fullyFeatured: {
-      dash: 'https://cdn2.giloo.ist/1/1_abc6284309fa9282e28d2b5618ea69d9/1505514137_dash.mpd',
-      // hls: '//bitdash-a.akamaihd.net/content/sintel/hls/playlist.m3u8',
+      // dash: 'https://cdn2.giloo.ist/1/1_abc6284309fa9282e28d2b5618ea69d9/1505514137_dash.mpd',
+      hls: '//bitdash-a.akamaihd.net/content/sintel/hls/playlist.m3u8',
     //   progressive: [
     //     {url: '//bitdash-a.akamaihd.net/content/sintel/Sintel.mp4', type: 'video/mp4'},
     //     {url: '//bitdash-a.akamaihd.net/content/sintel/Sintel.webm', type: 'video/webm'}
     //   ],
     //   poster: '//bitdash-a.akamaihd.net/content/sintel/poster.png',
-    //   tracks: [{
-    //     file: '//bitdash-a.akamaihd.net/content/sintel/sprite/sprite.vtt',
-    //     kind: 'thumbnails'
-    //   }],
+      // tracks: [{
+      //   file: '//bitdash-a.akamaihd.net/content/sintel/sprite/sprite.vtt',
+      //   kind: 'thumbnails'
+      // }],
     //   title: 'Sintel',
     //   description: 'A woman, Sintel, is attacked while traveling through a wintry mountainside. After defeating her attacker and taking his spear, she finds refuge in a shaman\'s hut...',
     //   // markers: [
@@ -263,6 +263,7 @@
     player.setup(config).then(function() {
       // Add UI to loaded player
       uiManager = bitmovin.playerui.UIManager.Factory.buildDefaultUI(player, uiConfig);
+      player.addSubtitle({url: 'http://bitdash-a.akamaihd.net/content/sintel/subtitles/subtitles_en.vtt', id: 'test', lang: 'ru', label: 'Test Subtitle'});
     }, function(errorEvent) {
       // Play setup failed, and there's no player UI yet to display the error in
       console.log(errorEvent);

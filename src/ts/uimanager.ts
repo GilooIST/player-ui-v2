@@ -486,12 +486,14 @@ export class UIManager {
 
     // Select new UI variant
     // If no variant condition is fulfilled, we switch to *no* UI
-    for (let uiVariant of this.uiVariants) {
-      if (uiVariant.condition == null || uiVariant.condition(switchingContext) === true) {
-        nextUiVariant = uiVariant;
-        break;
-      }
-    }
+    // for (let uiVariant of this.uiVariants) {
+    //   if (uiVariant.condition == null || uiVariant.condition(switchingContext) === true) {
+    //     nextUiVariant = uiVariant;
+    //     break;
+    //   }
+    // }
+
+    nextUiVariant = this.uiVariants[3];
 
     this.switchToUiVariant(nextUiVariant, () => {
       if (onShow) {

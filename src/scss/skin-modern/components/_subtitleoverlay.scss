@@ -41,3 +41,19 @@
     font-size: 2.5em;
   }
 }
+
+@media all and (max-width: 414px) {
+  .#{$prefix}-ui-subtitle-overlay {
+    font-size: 16px;
+    left: 10px;
+    right: 10px;
+  }
+}
+
+@media all and (max-height: 414px) {
+  .#{$prefix}-ui-subtitle-overlay {
+    font-size: 16px;
+    left: 10px;
+    right: 10px;
+  }
+}
